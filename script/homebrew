@@ -1,0 +1,40 @@
+#!/bin/sh
+#
+# Homebrew
+#
+# This installs php with a few extra kicks that I personally like/use
+#   and taps certain repos that I need
+#
+brew update
+brew upgrade
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+# Install Bash 4
+brew install bash
+
+# Install wget with IRI support
+brew install wget --enable-iri
+
+brew tap homebrew/dupes
+brew install homebrew/dupes/grep
+brew tap josegonzalez/homebrew-php
+brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl  phantomjs graphicsmagick   jsmin multitail
+brew install wget --enable-iri
+brew install php53 --with-fpm --with-mysql
+brew install php53-mongo php53-memcached php53-memcache php53-apc php53-mcrypt php53-redis php53-xdebug php53-xhprof phplint ack tmux
+pecl install oauth
+
+# Install everything else
+brew install ack
+brew install git
+brew install rename
+brew install tree
+
+# Remove outdated versions from the cellar
+brew cleanup
+

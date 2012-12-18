@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+$ary = array('facebookdev-ssl', 'jeepops', 'edamame-ssl', 'mlspubs', 'kiakey', 'kiaadmin.kiakey');
+
+
+bashDo('sudo echo ""');
+bashDo('cd /etc/ssl');
+foreach ($ary as $name) {
+	createSSLCert($name);
+}
+
+function createSSlCert($name) {
+	$name = "/etc/ssl/{$name}";
+	if (file_exists($name . ".crt")) {
+		return;
+	}
+	bashDo("sudo openssl genrsa -des3 -out {$name}.key 1024");
+	bashDo("sudo openssl req -new -key {$name}.key -out {$name}.csr");
+	bashDo("sudo cp {$name}.key {$name}.key.org");
+	bashDo("sudo openssl rsa -in {$name}.key.org -out {$name}.key");
+	bashDo("sudo openssl x509 -req -days 365 -in {$name}.csr -signkey {$name}.key -out {$name}.crt");
+}
+
+function bashDo($cmd) {
+	exec($cmd);
+}

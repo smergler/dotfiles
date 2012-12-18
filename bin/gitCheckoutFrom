@@ -1,0 +1,5 @@
+#!/bin/bash
+
+git checkout $1
+git pull origin $1
+git checkout -b $2

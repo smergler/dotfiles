@@ -1,0 +1,3 @@
+#!/bin/bash
+
+icecast -c /usr/local/etc/icecast.xml

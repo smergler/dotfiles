@@ -1,0 +1,9 @@
+#!/bin/bash
+git stash
+git checkout $2
+git pull origin $2
+git merge --no-ff $1
+git push origin $2
+git checkout $1
+git stash pop
+git pull origin $2

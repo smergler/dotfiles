@@ -1,0 +1,10 @@
+#!/bin/bash
+sudo echo "";
+sudo brew update;
+sudo brew outdated | xargs brew upgrade;
+#sudo pear channel-update pear.php.net;
+#sudo pear channel-update pear.phpunit.de;
+#sudo pear upgrade;
+#TODO fixme to update for rvm
+# rvm update;
+#sudo cpan -r;

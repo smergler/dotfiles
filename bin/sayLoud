@@ -1,0 +1,1 @@
+osascript ~/Documents/funstuff/applescript/sayLoud.scpt $1 2> /dev/null

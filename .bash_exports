@@ -4,6 +4,7 @@
 MACOSX_DEPLOYMENT_TARGET=10.8
 export MACOSX_DEPLOYMENT_TARGET
 
+export PATH="~/bin:$PATH"
 export PATH="/usr/local/PEAR:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"

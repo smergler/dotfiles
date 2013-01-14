@@ -26,8 +26,10 @@ brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl  phantomjs graphicsmagick   jsmin multitail
 brew install wget --enable-iri
 brew install php53 --with-fpm --with-mysql
-brew install php53-mongo php53-memcached php53-memcache php53-apc php53-mcrypt php53-redis php53-xdebug php53-xhprof phplint ack tmux
-pecl install oauth
+brew install php53-mongo php53-memcached php53-memcache php53-apc php53-mcrypt
+brew install php53-redis php53-xdebug php53-xhprof phplint ack tmux php53-yaml
+brew install php53-igbinary v8 php53-oauth
+pecl install v8js-beta
 
 # Install everything else
 brew install ack

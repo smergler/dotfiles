@@ -105,6 +105,7 @@ alias mysql_start='mysqld --bootstrap --skip-grant-tables'
 alias cpan='sudo /usr/bin/cpan5.10.0'
 #alias php='php --php-ini=/private/etc/php.ini'
 
-alias tether='adb forward tcp:8080 tcp:8080';
+# make sure sudo uses the correct path
+alias sudo='sudo env PATH=$PATH'
 
 

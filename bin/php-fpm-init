@@ -10,7 +10,7 @@
 # Description:       starts the PHP FastCGI Process Manager daemon
 ### END INIT INFO
 
-prefix=/usr
+prefix=/usr/local
 exec_prefix=$prefix
 
 php_fpm_BIN=$prefix/sbin/php-fpm
@@ -54,7 +54,7 @@ wait_for_pid () {
 case "$1" in
 	start)
 		echo -n "Starting php-fpm "
-
+		echo -n $php_fpm_BIN $php_opts
 		$php_fpm_BIN $php_opts
 
 		if [ "$?" != 0 ] ; then

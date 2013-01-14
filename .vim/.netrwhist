@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/smergler/.dotfiles_private/nginx/conf.d/facebook'
+let g:netrw_dirhist_2='/Users/smergler/.dotfiles_private/etc'
+let g:netrw_dirhist_3='/.dotfiles/.git'
+let g:netrw_dirhist_4='/usr/local/etc-orig/php/5.3/conf.d'
+let g:netrw_dirhist_5='/.dotfiles'
+let g:netrw_dirhist_6='/Users/smergler/Sites/edamame'
+let g:netrw_dirhist_7='/Users/smergler/Sites/edamame/libraries/kia_key'
+let g:netrw_dirhist_8='/Users/smergler/.dotfiles'
+let g:netrw_dirhist_9='/Users/smergler/.dotfiles_private'

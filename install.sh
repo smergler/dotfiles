@@ -125,7 +125,7 @@ done
 note "Initializing tools..."
 if has git; then
     # Post-install scripts might customize this further.
-    cp -v $basedir/.gitconfig.base $HOME/.gitconfig
+    # cp -v $basedir/.gitconfig.base $HOME/.gitconfig
 fi
 if has vim; then
   cd $basedir

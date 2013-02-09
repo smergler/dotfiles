@@ -34,34 +34,45 @@ fi
 
 # This is a list of all plugins which are available via Git repos. git:// URLs
 # don't work.
+#
+# Commented out plugins are ones that either don't work, I don't need or I
+# haven't quite gotten it figured out and configured yet. These came from the
+# origin of this script
 repos=(
-  https://github.com/Lokaltog/vim-powerline.git
+  # https://github.com/Lokaltog/vim-powerline.git
+  #https://github.com/Lokaltog/powerline.git
+
+  #colorschemes
   https://github.com/altercation/vim-colors-solarized.git
-  https://github.com/docunext/closetag.vim.git
   https://github.com/digitaltoad/vim-jade.git
-  https://github.com/hced/bufkill-vim.git
-  https://github.com/kchmck/vim-coffee-script.git
-  https://github.com/kien/ctrlp.vim.git
-  https://github.com/majutsushi/tagbar.git
-  https://github.com/michaeljsmith/vim-indent-object.git
-  https://github.com/mikewest/vimroom.git
-  https://github.com/nono/vim-handlebars.git
-  https://github.com/pangloss/vim-javascript.git
+  https://github.com/vim-scripts/oceandeep.git
+
+  #actual plugins
+  https://github.com/docunext/closetag.vim.git
   https://github.com/scrooloose/nerdtree.git
   https://github.com/scrooloose/syntastic.git
-  https://github.com/timcharper/textile.vim
   https://github.com/tpope/vim-fugitive.git
-  https://github.com/tpope/vim-haml.git
-  https://github.com/tpope/vim-markdown.git
   https://github.com/tpope/vim-pathogen.git
   https://github.com/tpope/vim-ragtag.git
   https://github.com/tpope/vim-surround.git
-  https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
   https://github.com/vim-scripts/keepcase.vim.git
-  https://github.com/vim-scripts/lighttpd-syntax.git
-  https://github.com/vim-scripts/oceandeep.git
-  https://github.com/vim-scripts/oceandeep.git
+  #https://github.com/hced/bufkill-vim.git
+  #https://github.com/kien/ctrlp.vim.git
+  #https://github.com/majutsushi/tagbar.git
+  #https://github.com/michaeljsmith/vim-indent-object.git
+  #https://github.com/mikewest/vimroom.git
+
+  #syntax files
+  https://github.com/kchmck/vim-coffee-script.git
+  https://github.com/nono/vim-handlebars.git
+  https://github.com/pangloss/vim-javascript.git
+  https://github.com/timcharper/textile.vim
+  https://github.com/tpope/vim-haml.git
+  https://github.com/tpope/vim-markdown.git
   https://github.com/wavded/vim-stylus.git
+  #https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
+  #https://github.com/vim-scripts/lighttpd-syntax.git
+
   )
 
 # Here's a list of everything else to download in the format

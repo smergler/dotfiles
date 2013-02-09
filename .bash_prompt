@@ -48,7 +48,7 @@ function parse_git_branch() {
 }
 
 function on_branch() {
-	[[ -n $(git branch) ]] && echo " on "
+	[[ -n $(git branch 2> /dev/null ) ]] && echo " on "
 }
 
 # Only show username/host if not default

@@ -42,7 +42,7 @@ export PATH=$GRAILS_PATH/bin:$PATH
 export ANDROID_SDK_ROOT='~/android'
 export PATH=$ANDROID_SDK_ROOT/tools:$PATH
 
-export PYTHONPATH="/usr/local/lib/python2.6/site-packages/:$PYTHONPATH"
+export PYTHONPATH="/usr/local/lib/python2.6/site-packages:$PYTHONPATH"
 export LOCAL_BIN_ROOT='~/bin';
 
 

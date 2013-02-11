@@ -28,8 +28,15 @@ brew install wget --enable-iri
 brew install php53 --with-fpm --with-mysql
 brew install php53-mongo php53-memcached php53-memcache php53-apc php53-mcrypt
 brew install php53-redis php53-xdebug php53-xhprof phplint ack tmux php53-yaml
-brew install php53-igbinary v8 php53-oauth
+brew install php53-igbinary v8 php53-oauth python
 pecl install v8js-beta
+
+curl http://python-distribute.org/distribute_setup.py | sudo python
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+sudo pip install --upgrade fabric pssh
+
+sudo npm install grunt
+sudo npm install -g bbb
 
 # Install everything else
 brew install ack
@@ -39,4 +46,7 @@ brew install tree
 
 # Remove outdated versions from the cellar
 brew cleanup
+
+
+
 

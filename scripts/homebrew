@@ -25,18 +25,15 @@ brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl  phantomjs graphicsmagick   jsmin multitail
 brew install wget --enable-iri
-brew install php53 --with-fpm --with-mysql
-brew install php53-mongo php53-memcached php53-memcache php53-apc php53-mcrypt
-brew install php53-redis php53-xdebug php53-xhprof phplint ack tmux php53-yaml
-brew install php53-igbinary v8 php53-oauth
+brew install php54 --with-fpm --with-mysql --without-pear
+brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
+  php54-redis php54-xdebug php54-xhprof phplint ack tmux php54-yaml \
+  php54-igbinary v8 php54-oauth
 pecl install v8js-beta
 
 # Install everything else
-brew install ack
-brew install git
-brew install rename
-brew install tree
+brew install ack rename tree
 
 # Remove outdated versions from the cellar
-brew cleanup
+#brew cleanup
 

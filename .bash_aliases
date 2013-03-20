@@ -108,4 +108,6 @@ alias cpan='sudo /usr/bin/cpan5.10.0'
 # make sure sudo uses the correct path
 alias sudo='sudo env PATH=$PATH'
 
+# wget w/o letting the server know we are using wget
+alias wget='wget --user-agent=""'
 

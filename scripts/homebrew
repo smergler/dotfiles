@@ -31,6 +31,13 @@ brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
   php54-igbinary v8 php54-oauth
 pecl install v8js-beta
 
+curl http://python-distribute.org/distribute_setup.py | sudo python
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+sudo pip install --upgrade fabric pssh
+
+sudo npm install grunt
+sudo npm install -g bbb
+
 # Install everything else
 brew install ack rename tree
 

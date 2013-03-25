@@ -46,7 +46,8 @@ repos=(
   https://github.com/vim-scripts/oceandeep.git
   https://github.com/vim-scripts/oceandeep.git
   https://github.com/wavded/vim-stylus.git
-  )
+  https://github.com/mehlah/vim-li3.git
+)
 
 # Here's a list of everything else to download in the format
 # <destination>;<url>

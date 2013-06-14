@@ -52,7 +52,8 @@ repos=(
 # Here's a list of everything else to download in the format
 # <destination>;<url>
 other=(
-  'zenburn/colors;http://slinky.imukuppi.org/zenburn/zenburn.vim'
+  # zenburn doesn't seem to like curling the vim file
+  #'zenburn/colors;http://slinky.imukuppi.org/zenburn/zenburn.vim'
   'L9;https://bitbucket.org/ns9tks/vim-l9/get/tip.zip'
   'wombat/colors;http://files.werx.dk/wombat.vim'
   'actionscript/syntax;http://www.vim.org/scripts/download_script.php?src_id=10123;actionscript.vim'

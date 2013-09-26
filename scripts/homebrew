@@ -23,13 +23,15 @@ brew install wget --enable-iri
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
-brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl  phantomjs graphicsmagick   jsmin multitail
+brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin multitail
 brew install wget --enable-iri
 brew install php54 --with-fpm --with-mysql --without-pear
 brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
   php54-redis php54-xdebug php54-xhprof phplint ack tmux php54-yaml \
   php54-igbinary v8 php54-oauth
 pecl install v8js-beta
+pecl install -f ssh2
+
 
 curl http://python-distribute.org/distribute_setup.py | sudo python
 curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python

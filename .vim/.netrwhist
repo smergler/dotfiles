@@ -1,2 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =0
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/smergler/Sites/edamame/libraries/affin_common/puppet/modules/php/manifests'
+let g:netrw_dirhist_2='/Users/smergler/Sites/edamame/libraries/affin_common/puppet/modules'
+let g:netrw_dirhist_3='/Users/smergler/Sites/FacebookApps/lib/affin_spotify/webroot'
+let g:netrw_dirhist_4='/.dotfiles/php-fpm'
+let g:netrw_dirhist_5='/Users/smergler/Sites/edamame/vagrantFiles'
+let g:netrw_dirhist_6='/Users/smergler/Sites/edamame/libraries/kia_key/config/bootstrap/environment'

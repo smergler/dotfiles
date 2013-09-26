@@ -56,11 +56,11 @@ repos=(
   https://github.com/tpope/vim-ragtag.git
   https://github.com/tpope/vim-surround.git
   https://github.com/vim-scripts/keepcase.vim.git
-  #https://github.com/hced/bufkill-vim.git
-  #https://github.com/kien/ctrlp.vim.git
-  #https://github.com/majutsushi/tagbar.git
-  #https://github.com/michaeljsmith/vim-indent-object.git
-  #https://github.com/mikewest/vimroom.git
+  https://github.com/vim-scripts/bufkill.vim.git
+  https://github.com/kien/ctrlp.vim.git
+  https://github.com/majutsushi/tagbar.git
+  https://github.com/michaeljsmith/vim-indent-object.git
+  https://github.com/mikewest/vimroom.git
 
   #syntax files
   https://github.com/kchmck/vim-coffee-script.git
@@ -70,8 +70,8 @@ repos=(
   https://github.com/tpope/vim-haml.git
   https://github.com/tpope/vim-markdown.git
   https://github.com/wavded/vim-stylus.git
-  #https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
-  #https://github.com/vim-scripts/lighttpd-syntax.git
+  https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
+  https://github.com/vim-scripts/lighttpd-syntax.git
 
   )
 

@@ -106,6 +106,14 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags() " generate helptags for everything in 'runtimepath'
 filetype plugin indent on
 
+let g:syntastic_json_checkers=['jsonlint']
 
 let g:ragtag_global_maps = 1
 
+source ~/.vim/php-doc.vim
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+
+
+set noexpandtab             " Keep ALL the tabs

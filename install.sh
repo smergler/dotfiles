@@ -122,6 +122,9 @@ for rc in vim gvim; do
     fi
 done
 
+link $basedir/.vim/editorconfig $HOME/.editorconfig
+
+
 note "Initializing tools..."
 #if has git; then
     # Post-install scripts might customize this further.

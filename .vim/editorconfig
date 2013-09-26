@@ -1,0 +1,64 @@
+# EditorConfig helps developers define and maintain consistent
+# coding styles between different editors and IDEs
+# editorconfig.org
+
+root = true
+
+
+[*]
+# We recommend you to keep these unchanged
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+indent_style = space
+indent_size = 4
+
+# Tabs(2) in PHP unless otherwise specified
+[**.php]
+indent_style = tabs
+trim_trailing_whitespace = true
+insert_final_newline = false
+
+# Spaces(4) in JS unless otherwise specified
+[**.js]
+indent_style = space
+indent_size = 4
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.html]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.html.php]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.css]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.xml]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+
+####################################
+# Samples...uncomment to use
+####################################
+
+# [Makefile]
+# indent_style = tab
+
+# [**.bat]
+# end_of_line = crlf
+
+# [**.rb]
+# indent_style = space
+# indent_size = 2

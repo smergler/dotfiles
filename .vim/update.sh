@@ -61,6 +61,7 @@ repos=(
   https://github.com/majutsushi/tagbar.git
   https://github.com/michaeljsmith/vim-indent-object.git
   https://github.com/mikewest/vimroom.git
+  https://github.com/editorconfig/editorconfig-vim.git
 
   #syntax files
   https://github.com/kchmck/vim-coffee-script.git

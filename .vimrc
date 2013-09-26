@@ -46,7 +46,7 @@ set smarttab                " a <Tab> in front of a line inserts blanks
 set shiftwidth=2            " The # of spaces for indenting.
 set tabstop=2               " option 4 from :help tabstop
 set softtabstop=2           " Tab key results in 2 spaces
-set noexpandtab             " Keep ALL the tabs
+"set noexpandtab             " Keep ALL the tabs
 set bs=2                    " Allow backspacing of everything
 set tw=80                   " set max line to 80
 

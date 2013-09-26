@@ -116,13 +116,13 @@ done
 
 note "Symlinking Vim configurations..."
 for rc in vim gvim; do
-    link $basedir/.vim/${rc}rc $HOME/.${rc}rc
+    link $basedir/vim/${rc}rc $HOME/.${rc}rc
     if [ ! -e $HOME/.${rc}local ]; then
         touch $HOME/.${rc}local
     fi
 done
 
-link $basedir/.vim/editorconfig $HOME/.editorconfig
+link $basedir/vim/editorconfig $HOME/.editorconfig
 
 
 note "Initializing tools..."

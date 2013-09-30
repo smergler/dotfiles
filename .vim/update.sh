@@ -56,11 +56,12 @@ repos=(
   https://github.com/tpope/vim-ragtag.git
   https://github.com/tpope/vim-surround.git
   https://github.com/vim-scripts/keepcase.vim.git
-  #https://github.com/hced/bufkill-vim.git
-  #https://github.com/kien/ctrlp.vim.git
-  #https://github.com/majutsushi/tagbar.git
-  #https://github.com/michaeljsmith/vim-indent-object.git
-  #https://github.com/mikewest/vimroom.git
+  https://github.com/vim-scripts/bufkill.vim.git
+  https://github.com/kien/ctrlp.vim.git
+  https://github.com/majutsushi/tagbar.git
+  https://github.com/michaeljsmith/vim-indent-object.git
+  https://github.com/mikewest/vimroom.git
+  https://github.com/editorconfig/editorconfig-vim.git
 
   #syntax files
   https://github.com/kchmck/vim-coffee-script.git
@@ -70,15 +71,16 @@ repos=(
   https://github.com/tpope/vim-haml.git
   https://github.com/tpope/vim-markdown.git
   https://github.com/wavded/vim-stylus.git
-  #https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
-  #https://github.com/vim-scripts/lighttpd-syntax.git
+  https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
+  https://github.com/vim-scripts/lighttpd-syntax.git
 
   )
 
 # Here's a list of everything else to download in the format
 # <destination>;<url>[;<filename>]
 other=(
-  'zenburn/colors;http://slinky.imukuppi.org/zenburn/zenburn.vim'
+
+  #'zenburn/colors;http://slinky.imukuppi.org/zenburn/zenburn.vim'
   'L9;https://bitbucket.org/ns9tks/vim-l9/get/tip.zip'
   'wombat/colors;http://files.werx.dk/wombat.vim'
   'actionscript/syntax;http://www.vim.org/scripts/download_script.php?src_id=10123;actionscript.vim'

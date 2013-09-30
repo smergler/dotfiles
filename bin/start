@@ -8,8 +8,8 @@ fi
 
 sudo mongod run --config /usr/local/etc/mongod.conf --smallfiles --noprealloc > /var/log/mongod.log 2>&1 &
 sudo redis-server /usr/local/etc/redis.conf > /var/log/redis.log 2>&1 &
-# sudo mysql.server start
-mysqld_safe --skip_grant_tables > /var/log/mysql.err 2>&1 &
+#mysql.server start
+#mysqld_safe --skip_grant_tables > /var/log/mysql.err 2>&1 &
 sudo memcached -d -u daemon -m 64MB -P /var/memcached/pid;
 sudo nginx;
 sudo mkdir -p /Library/Server/Mail/Data/spool

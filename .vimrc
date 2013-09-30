@@ -46,7 +46,7 @@ set smarttab                " a <Tab> in front of a line inserts blanks
 set shiftwidth=2            " The # of spaces for indenting.
 set tabstop=2               " option 4 from :help tabstop
 set softtabstop=2           " Tab key results in 2 spaces
-set noexpandtab             " Keep ALL the tabs
+"set noexpandtab             " Keep ALL the tabs
 set bs=2                    " Allow backspacing of everything
 set tw=80                   " set max line to 80
 
@@ -106,5 +106,13 @@ call pathogen#helptags() " generate helptags for everything in 'runtimepath'
 filetype plugin indent on
 
 au BufRead,BufNewFile *.handlebars,*.hbs,*.html set ft=html syntax=handlebars
+let g:syntastic_json_checkers=['jsonlint']
+
 let g:ragtag_global_maps = 1
+
+source ~/.vim/php-doc.vim
+inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-P> :call PhpDocSingle()<CR>
+vnoremap <C-P> :call PhpDocRange()<CR>
+
 

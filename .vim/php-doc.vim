@@ -1,11 +1,14 @@
 " PDV (phpDocumentor for Vim)
 " ===========================
 "
-" Version: 1.0.1
+" Version: 1.1.4
 " 
 " Copyright 2005 by Tobias Schlitt <toby@php.net>
 " Inspired by phpDoc script for Vim by Vidyut Luther (http://www.phpcult.com/).
 "
+" modified by kevin olson (acidjazz@gmail.com)
+
+
 " Provided under the GPL (http://www.gnu.org/copyleft/gpl.html).
 "
 " This script provides functions to generate phpDocumentor conform
@@ -43,6 +46,11 @@
 " Changelog
 " =========
 "
+" Version 1.1.4
+" -------------
+" - added folding support 03/19/2008
+" - fixed all the variable type regex - booleans and integers properly work now 2/28/2010
+"
 " Version 1.0.0
 " -------------
 "
@@ -63,6 +71,13 @@
 "  * Added foldmarker generation.
 " 
 
+" Version 1.1.2 
+" -------------
+"  * Completed foldmarker commenting for functions
+" 
+
+
+
 if has ("user_commands")
 
 " {{{ Globals
@@ -73,14 +88,15 @@ let g:pdv_cfg_Comment1 = " * "
 let g:pdv_cfg_Commentn = " * "
 let g:pdv_cfg_CommentTail = " */"
 let g:pdv_cfg_CommentSingle = "//"
+let g:pdv_cfg_CommentEnd = "// }" . "}" . "}"
 
 " Default values
 let g:pdv_cfg_Type = "mixed"
 let g:pdv_cfg_Package = ""
 let g:pdv_cfg_Version = "$id$"
-let g:pdv_cfg_Author = "Tobias Schlitt <toby@php.net>"
-let g:pdv_cfg_Copyright = "1997-2005 The PHP Group"
-let g:pdv_cfg_License = "PHP Version 3.0 {@link http://www.php.net/license/3_0.txt}"
+let g:pdv_cfg_Author = "kevin olson <acidjazz@gmail.com>"
+let g:pdv_cfg_Copyright = "2006-2009 FanIQ"
+let g:pdv_cfg_License = "PHP Version 5.2 {@link http://www.php.net/license/}"
 
 let g:pdv_cfg_ReturnVal = "void"
 
@@ -119,20 +135,23 @@ let g:pdv_re_final = '\(final\)'
 
 " [:space:]*(private|protected|public|static|abstract)*[:space:]+[:identifier:]+\([:params:]\)
 let g:pdv_re_func = '^\s*\([a-zA-Z ]*\)function\s\+\([^ (]\+\)\s*(\s*\(.*\)\s*)\s*[{;]\?$'
+let g:pdv_re_funcend = '^\s*}$'
 " [:typehint:]*[:space:]*$[:identifier]\([:space:]*=[:space:]*[:value:]\)?
 let g:pdv_re_param = ' *\([^ &]*\) *&\?\$\([A-Za-z_][A-Za-z0-9_]*\) *=\? *\(.*\)\?$'
 
 " [:space:]*(private|protected|public\)[:space:]*$[:identifier:]+\([:space:]*=[:space:]*[:value:]+\)*;
 let g:pdv_re_attribute = '^\s*\(\(private\|public\|protected\|var\|static\)\+\)\s*\$\([^ ;=]\+\)[ =]*\(.*\);\?$'
+let g:pdv_re_const = '^\s*\(\(const\)\+\)\s*\([^ ;=]\+\)[ =]*\(.*\);\?$'
 
 " [:spacce:]*(abstract|final|)[:space:]*(class|interface)+[:space:]+\(extends ([:identifier:])\)?[:space:]*\(implements ([:identifier:][, ]*)+\)?
 let g:pdv_re_class = '^\s*\([a-zA-Z]*\)\s*\(interface\|class\)\s*\([^ ]\+\)\s*\(extends\)\?\s*\([a-zA-Z0-9]*\)\?\s*\(implements*\)\? *\([a-zA-Z0-9_ ,]*\)\?.*$'
 
 let g:pdv_re_array  = "^array *(.*"
-let g:pdv_re_float  = '^[0-9.]\+'
-let g:pdv_re_int    = '^[0-9]\+$'
+let g:pdv_re_int    = '^[0-9]\+'
+let g:pdv_re_float  = '^\d\+\.\d\+'
 let g:pdv_re_string = "['\"].*"
 let g:pdv_re_bool = "\(true\|false\)"
+
 
 let g:pdv_re_indent = '^\s*'
 
@@ -222,14 +241,21 @@ func! PhpDoc()
     if l:line =~ g:pdv_re_func
         let l:result = PhpDocFunc()
 
+    elseif l:line =~ g:pdv_re_funcend
+			let l:result = PhpDocFuncEnd()
+
     elseif l:line =~ g:pdv_re_attribute
         let l:result = PhpDocVar()
+
+    elseif l:line =~ g:pdv_re_const
+        let l:result = PhpDocConst()
 
     elseif l:line =~ g:pdv_re_class
         let l:result = PhpDocClass()
 
-    else
-        let l:result = PhpDocDefault()
+ 
+		else
+      let l:result = PhpDocDefault()
 
     endif
 
@@ -243,6 +269,24 @@ func! PhpDoc()
 endfunc
 
 " }}}
+
+" {{{ PhpDocFuncEnd()
+func! PhpDocFuncEnd()
+
+	call append(line('.'), matchstr(getline('.'), '^\s*') . g:pdv_cfg_CommentEnd)
+endfunc
+" }}}
+" {{{ PhpDocFuncEndAuto()
+func! PhpDocFuncEndAuto()
+
+
+	call search('{')
+	call searchpair('{', '', '}')
+	call append(line('.'), matchstr(getline('.'), '^\s*') . g:pdv_cfg_CommentEnd)
+
+endfunc
+" }}}
+
 " {{{  PhpDocFunc()  
 
 func! PhpDocFunc()
@@ -265,6 +309,8 @@ func! PhpDocFunc()
 	let l:modifier = substitute (l:name, g:pdv_re_func, '\1', "g")
 	let l:funcname = substitute (l:name, g:pdv_re_func, '\2', "g")
 	let l:parameters = substitute (l:name, g:pdv_re_func, '\3', "g") . ","
+	let l:params = substitute (l:name, g:pdv_re_func, '\3', "g") 
+	let l:params = substitute (l:params, '[$  ]', '', "g")
     let l:scope = PhpDocScope(l:modifier, l:funcname)
     let l:static = g:pdv_cfg_php4always == 1 ? matchstr(l:modifier, g:pdv_re_static) : ""
 	let l:abstract = g:pdv_cfg_php4always == 1 ? matchstr(l:modifier, g:pdv_re_abstract) : ""
@@ -274,9 +320,12 @@ func! PhpDocFunc()
     
     " Local indent
     let l:txtBOL = g:pdv_cfg_BOL . l:indent
+
+		exec l:txtBOL . "// " . l:scope ." ".  funcname . "(" . l:params . ") {{" . "{ " . g:pdv_cfg_EOL
 	
     exe l:txtBOL . g:pdv_cfg_CommentHead . g:pdv_cfg_EOL
-	exe l:txtBOL . g:pdv_cfg_Comment1 . funcname . " " . g:pdv_cfg_EOL
+		" added folding
+		exe l:txtBOL . g:pdv_cfg_Comment1 . funcname . g:pdv_cfg_EOL
     exe l:txtBOL . g:pdv_cfg_Commentn . g:pdv_cfg_EOL
 
 	while (l:parameters != ",") && (l:parameters != "")
@@ -317,7 +366,8 @@ func! PhpDocFunc()
 
 	" Close the comment block.
 	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
-    return l:modifier ." ". l:funcname
+
+  return l:modifier ." ". l:funcname . PhpDocFuncEndAuto()
 endfunc
 
 " }}}  
@@ -360,6 +410,46 @@ func! PhpDocVar()
     if l:scope != ""
         exe l:txtBOL . g:pdv_cfg_Commentn . "@access " . l:scope . g:pdv_cfg_EOL
     endif
+	
+    " Close the comment block.
+	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
+	return l:modifier ." ". l:varname
+endfunc
+
+" }}}
+ " {{{  PhpDocConst() 
+
+func! PhpDocConst()
+	" Line for the comment to begin
+	let commentline = line (".") - 1
+
+	let l:name = substitute (getline ("."), '^\(.*\)\/\/.*$', '\1', "")
+
+	" Now we have to split DECL in three parts:
+	" \[(skopemodifier\)]\(funcname\)\(parameters\)
+	" let l:name = substitute (l:name, '\t', ' ', "")
+	" Orphan. We're now using \s everywhere...
+
+    let l:indent = matchstr(l:name, g:pdv_re_indent)
+
+	let l:modifier = substitute (l:name, g:pdv_re_const, '\1', "g")
+	let l:varname = substitute (l:name, g:pdv_re_const, '\3', "g")
+	let l:default = substitute (l:name, g:pdv_re_const, '\4', "g")
+    let l:scope = PhpDocScope(l:modifier, l:varname)
+
+    let l:static = g:pdv_cfg_php4always == 1 ? matchstr(l:modifier, g:pdv_re_static) : ""
+
+    let l:type = PhpDocType(l:default)
+    
+    exe "norm! " . commentline . "G$"
+    
+    " Local indent
+    let l:txtBOL = g:pdv_cfg_BOL . l:indent
+	
+    exe l:txtBOL . g:pdv_cfg_CommentHead . g:pdv_cfg_EOL
+	exe l:txtBOL . g:pdv_cfg_Comment1 . l:varname . " " . g:pdv_cfg_EOL
+    exe l:txtBOL . g:pdv_cfg_Commentn . g:pdv_cfg_EOL
+    exe l:txtBOL . g:pdv_cfg_Commentn . "@const " . l:type . g:pdv_cfg_EOL
 	
     " Close the comment block.
 	exe l:txtBOL . g:pdv_cfg_CommentTail . g:pdv_cfg_EOL
@@ -462,11 +552,11 @@ func! PhpDocType(typeString)
     if a:typeString =~ g:pdv_re_array 
         let l:type = "array"
     endif
-    if a:typeString =~ g:pdv_re_float 
-        let l:type = "float"
-    endif
     if a:typeString =~ g:pdv_re_int 
         let l:type = "int"
+    endif
+    if a:typeString =~ g:pdv_re_float 
+        let l:type = "float"
     endif
     if a:typeString =~ g:pdv_re_string
         let l:type = "string"

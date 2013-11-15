@@ -111,9 +111,11 @@ let g:syntastic_json_checkers=['jsonlint']
 let g:ragtag_global_maps = 1
 
 source ~/.vim/php-doc.vim
-inoremap <C-P> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-P> :call PhpDocSingle()<CR>
-vnoremap <C-P> :call PhpDocRange()<CR>
+inoremap <C-O> <ESC>:call PhpDocSingle()<CR>i
+nnoremap <C-O> :call PhpDocSingle()<CR>
+vnoremap <C-O> :call PhpDocRange()<CR>
 
 
 set noexpandtab             " Keep ALL the tabs
+:au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v\%>80v', -1)
+:au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.', -1)

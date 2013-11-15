@@ -62,6 +62,7 @@ repos=(
   https://github.com/michaeljsmith/vim-indent-object.git
   https://github.com/mikewest/vimroom.git
   https://github.com/editorconfig/editorconfig-vim.git
+  https://github.com/airblade/vim-gitgutter.git
 
   #syntax files
   https://github.com/kchmck/vim-coffee-script.git

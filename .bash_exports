@@ -58,3 +58,8 @@ export NODE_PATH='/usr/local/lib/node':'/usr/local/lib/node_modules':$NODE_PATH;
 #[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm" # Load RVM function
 
 export PHP_AUTOCONF=/usr/local/bin/autoconf;
+
+#homebrew exports
+#set cask to install in /Applications
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+

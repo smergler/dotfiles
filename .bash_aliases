@@ -111,3 +111,6 @@ alias cpan='sudo /usr/bin/cpan5.10.0'
 # wget w/o letting the server know we are using wget
 alias wget='wget --user-agent=""'
 
+
+alias downloadFromYoutube='youtube-dl -x --audio-format best --audio-quality 0'
+

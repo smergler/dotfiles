@@ -10,6 +10,7 @@ brew upgrade
 
 # Install GNU core utilities (those that come with OS X are outdated)
 brew install coreutils
+brew install apple-gcc42
 echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
 
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
@@ -23,8 +24,9 @@ brew install wget --enable-iri
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
 brew tap josegonzalez/homebrew-php
-brew install dos2unix libmemcached nginx readline bash-completion mcrypt node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin multitail
-brew install wget --enable-iri
+brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
+   node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
+    multitail unrar p7zip
 brew install php54 --with-fpm --with-mysql --without-pear
 brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
   php54-redis php54-xdebug php54-xhprof phplint ack tmux php54-yaml \
@@ -32,6 +34,9 @@ brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
 pecl install v8js-beta beanstalkd
 pecl install -f ssh2
 
+
+brew install ffmpeg --with-openssl --with-jpeg --with-tools --with-libvorbis
+brew install youtube-dl
 
 curl http://python-distribute.org/distribute_setup.py | sudo python
 curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
@@ -42,6 +47,15 @@ sudo npm install -g bbb
 
 # Install everything else
 brew install ack rename tree
+
+
+# install cask, chrome, and quick look extensions
+brew tap phinze/homebrew-cask
+brew install brew-cask
+brew cask install google-chrome
+brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch \
+    quicklook-csv betterzipql webp-quicklook suspicious-package && qlmanage -r
+
 
 # Remove outdated versions from the cellar
 #brew cleanup

@@ -16,3 +16,5 @@ Thumbs.db
 .extra
 .vim/bundle/*
 .vim/swap/*.sw*
+
+node_modules

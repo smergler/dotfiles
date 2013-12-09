@@ -1,9 +1,10 @@
 #!/bin/bash
 sudo nginx -s stop
-sudo php-fpm-init stop
+sudo php-fpm-init force-quit
 #sudo mysql.server stop
 sudo killall memcached
 #sudo killall mysqld > /var/log/mysql.err 2>&1 &
 sudo killall mongod
 sudo killall redis-server
+sudo killall beanstalkd
 

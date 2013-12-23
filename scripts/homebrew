@@ -39,7 +39,7 @@ brew install ffmpeg --with-openssl --with-jpeg --with-tools --with-libvorbis
 brew install youtube-dl
 
 curl http://python-distribute.org/distribute_setup.py | sudo python
-curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | python
+curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
 sudo pip install --upgrade fabric pssh
 
 sudo npm install grunt
@@ -53,8 +53,19 @@ brew install ack rename tree
 brew tap phinze/homebrew-cask
 brew install brew-cask
 brew cask install google-chrome
-brew cask install qlcolorcode qlstephen qlmarkdown quicklook-json qlprettypatch \
-    quicklook-csv betterzipql webp-quicklook suspicious-package && qlmanage -r
+brew cask install qlcolorcode
+brew cask install qlstephen
+brew cask install qlmarkdown quicklook-json
+brew cask install qlprettypatch
+brew cask install quicklook-csv
+brew cask install betterzipql
+brew cask install webp-quicklook
+brew cask install suspicious-package
+
+qlmanage -r
+
+brew cask install caffeine
+brew cask install alfred
 
 
 # Remove outdated versions from the cellar

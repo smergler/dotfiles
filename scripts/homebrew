@@ -66,6 +66,8 @@ qlmanage -r
 
 brew cask install caffeine
 brew cask install alfred
+brew cask install clipmenu
+brew cask install mou
 
 
 # Remove outdated versions from the cellar

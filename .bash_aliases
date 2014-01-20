@@ -36,6 +36,7 @@ alias undopush="git push -f origin HEAD^:master"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
+alias gs='git status -s -uno'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

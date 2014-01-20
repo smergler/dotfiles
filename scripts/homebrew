@@ -49,6 +49,11 @@ sudo npm install -g bbb
 brew install ack rename tree
 
 
+brew install elasticsearch;
+curl -sS https://getcomposer.org/installer | php
+# install the mongodb river extension
+$(dirname $(realpath $(which elasticsearch)))/plugin  --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/1.7.3
+
 # install cask, chrome, and quick look extensions
 brew tap phinze/homebrew-cask
 brew install brew-cask

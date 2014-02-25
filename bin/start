@@ -6,7 +6,9 @@ then
 	sudo rm "$file"
 fi
 
+#sudo mongod run --config /usr/local/etc/mongod.conf --smallfiles --noprealloc --replSet rs0 > /var/log/mongod.log 2>&1 &
 sudo mongod run --config /usr/local/etc/mongod.conf --smallfiles --noprealloc > /var/log/mongod.log 2>&1 &
+#sudo mongod run --config /usr/local/etc/mongod.conf --replSet rs0 > /var/log/mongod.log 2>&1 &
 sudo redis-server /usr/local/etc/redis.conf > /var/log/redis.log 2>&1 &
 #mysql.server start
 #mysqld_safe --skip_grant_tables > /var/log/mysql.err 2>&1 &
@@ -16,4 +18,4 @@ sudo nginx;
 #sudo /usr/sbin/postfix set-permissions
 #sudo /usr/sbin/postfix start
 beanstalkd &
-sudo elasticsearch -f -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml > /var/log/elastic.log 2>&1 &
+sudo elasticsearch -D es.config=/usr/local/opt/elasticsearch/config/elasticsearch.yml > /var/log/elastic.log 2>&1 &

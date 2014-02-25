@@ -7,4 +7,5 @@ sudo killall memcached
 sudo killall mongod
 sudo killall redis-server
 sudo killall beanstalkd
-sudo killall elasticsearch
+# kills elatic search
+curl -XPOST 'http://localhost:9200/_shutdown'

@@ -115,6 +115,9 @@ inoremap <C-O> <ESC>:call PhpDocSingle()<CR>i
 nnoremap <C-O> :call PhpDocSingle()<CR>
 vnoremap <C-O> :call PhpDocRange()<CR>
 
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+
 
 set noexpandtab             " Keep ALL the tabs
 :au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v\%>80v', -1)

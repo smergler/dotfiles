@@ -42,38 +42,46 @@ repos=(
   # https://github.com/Lokaltog/vim-powerline.git
   #https://github.com/Lokaltog/powerline.git
 
-  #colorschemes
-  https://github.com/altercation/vim-colors-solarized.git
-  https://github.com/digitaltoad/vim-jade.git
-  https://github.com/vim-scripts/oceandeep.git
-
   #actual plugins
+  # Functions and mappings to close open HTML/XML tags
   https://github.com/docunext/closetag.vim.git
+  # file browser for vim
   https://github.com/scrooloose/nerdtree.git
+  # syntax checking
   https://github.com/scrooloose/syntastic.git
+  # a pretty awesome git wrapper
   https://github.com/tpope/vim-fugitive.git
+  # allows your runtime path to be managed
   https://github.com/tpope/vim-pathogen.git
+  # writing html tags for fun and profit
+  # see: http://www.catonmat.net/blog/vim-plugins-ragtag-allml-vim/
   https://github.com/tpope/vim-ragtag.git
+  #surround phrase with something (ex. '  instead of ")
   https://github.com/tpope/vim-surround.git
-  https://github.com/vim-scripts/keepcase.vim.git
-  https://github.com/vim-scripts/bufkill.vim.git
+  # haven't figured this one out yet, but reddit pointed me to it
   https://github.com/kien/ctrlp.vim.git
-  https://github.com/majutsushi/tagbar.git
-  https://github.com/michaeljsmith/vim-indent-object.git
-  https://github.com/mikewest/vimroom.git
+  # browser, but I think it requres a few things I don't have
+  # https://github.com/majutsushi/tagbar.git
+  # not quite sure about this one  TODO: re-read it
+  #https://github.com/michaeljsmith/vim-indent-object.git
+  # vim room, distraction free feature from WriteRoom
+  # https://github.com/mikewest/vimroom.git
+  # editor config for vim
   https://github.com/editorconfig/editorconfig-vim.git
+  # shows a git diff in the gutter (sign column) and stages/reverts hunks.
   https://github.com/airblade/vim-gitgutter.git
 
   #syntax files
-  https://github.com/kchmck/vim-coffee-script.git
-  https://github.com/nono/vim-handlebars.git
+  # https://github.com/digitaltoad/vim-jade.git
+  # https://github.com/kchmck/vim-coffee-script.git
+  # https://github.com/nono/vim-handlebars.git
   https://github.com/pangloss/vim-javascript.git
-  https://github.com/timcharper/textile.vim
-  https://github.com/tpope/vim-haml.git
-  https://github.com/tpope/vim-markdown.git
-  https://github.com/wavded/vim-stylus.git
-  https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
-  https://github.com/vim-scripts/lighttpd-syntax.git
+  # https://github.com/timcharper/textile.vim
+  # https://github.com/tpope/vim-haml.git
+  # https://github.com/tpope/vim-markdown.git
+  # https://github.com/wavded/vim-stylus.git
+  # https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
+  # https://github.com/vim-scripts/lighttpd-syntax.git
 
   )
 

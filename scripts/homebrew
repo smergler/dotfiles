@@ -27,10 +27,10 @@ brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
    node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
     multitail unrar p7zip
-brew install php54 --with-fpm --with-mysql --without-pear
-brew install php54-mongo php54-memcached php54-memcache php54-apc php54-mcrypt \
-  php54-redis php54-xdebug php54-xhprof phplint ack tmux php54-yaml \
-  php54-igbinary v8 php54-oauth
+brew install php55 --with-fpm --with-mysql
+brew install php55-mongo php55-memcached php55-memcache php55-apcu php55-mcrypt \
+  php55-redis php55-xdebug php55-xhprof phplint ack tmux php55-yaml \
+  php55-igbinary v8 php55-oauth
 pecl install v8js-beta beanstalkd
 pecl install -f ssh2
 

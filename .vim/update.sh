@@ -56,7 +56,7 @@ repos=(
   # writing html tags for fun and profit
   # see: http://www.catonmat.net/blog/vim-plugins-ragtag-allml-vim/
   https://github.com/tpope/vim-ragtag.git
-  #surround phrase with something (ex. '  instead of ")
+  # surround phrase with something (ex. '  instead of ")
   https://github.com/tpope/vim-surround.git
   # haven't figured this one out yet, but reddit pointed me to it
   https://github.com/kien/ctrlp.vim.git
@@ -70,6 +70,8 @@ repos=(
   https://github.com/editorconfig/editorconfig-vim.git
   # shows a git diff in the gutter (sign column) and stages/reverts hunks.
   https://github.com/airblade/vim-gitgutter.git
+  # let me see buffers
+  https://github.com/bling/vim-airline.git
 
   #syntax files
   # https://github.com/digitaltoad/vim-jade.git

@@ -49,7 +49,8 @@ set softtabstop=2           " Tab key results in 2 spaces
 "set noexpandtab             " Keep ALL the tabs
 set bs=2                    " Allow backspacing of everything
 set tw=80                   " set max line to 80
-
+set exrc                    " if a .vimrc file is in the working dir, use it
+set secure                  " restrict usage of some commands in non-default .vimrc files
 
 
 
@@ -118,7 +119,30 @@ vnoremap <C-O> :call PhpDocRange()<CR>
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
 
-
 set noexpandtab             " Keep ALL the tabs
 :au BufWinEnter *.php,*.py let w:m1=matchadd('Search', '\%<101v\%>80v', -1)
 :au BufWinEnter *.php,*.py let w:m2=matchadd('ErrorMsg', '\%>100v.', -1)
+
+" checking out buffers from this article
+" http://joshldavis.com/2014/04/05/vim-tab-madness-buffers-vs-tabs/
+let g:airline#extensions#tabline#enabled = 1        " Enable the list of buffers
+let g:airline#extensions#tabline#fnamemod = ':t'    " Show just the filename
+set hidden                                          " My preference with using buffers. See `:h hidden` for more details
+" To open a new empty buffer
+nmap <Leader>T :enew<cr>
+" Move to the next buffer
+nmap gt :bnext<CR>
+" Move to the previous buffer
+nmap gT :bprevious<CR>
+" Close the current buffer and move to the previous one
+nmap <Leader>bq :bp <BAR> bd #<CR>
+" Show all open buffers and their status
+nmap <Leader>bl :ls<CR>
+
+" fugitive mappings
+map gs :Gstatus<CR>
+
+" git gutter mappings
+highlight clear SignColumn
+map gn ]c
+map gp [c

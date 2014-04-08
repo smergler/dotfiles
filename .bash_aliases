@@ -113,5 +113,5 @@ alias cpan='sudo /usr/bin/cpan5.10.0'
 alias wget='wget --user-agent=""'
 
 
-alias downloadFromYoutube='youtube-dl -x --audio-format best --audio-quality 0'
+alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0'
 

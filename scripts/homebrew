@@ -23,6 +23,7 @@ brew install wget --enable-iri
 
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
+brew untap josegonzalez/homebrew-php
 brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
    node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
@@ -33,6 +34,8 @@ brew install php55-mongo php55-memcached php55-memcache php55-apcu php55-mcrypt 
   php55-igbinary v8 php55-oauth
 pecl install v8js-beta beanstalkd
 pecl install -f ssh2
+
+brew install vim --override-system-vi --with-lua --with-perl --with-tcl
 
 
 brew install ffmpeg --with-openssl --with-jpeg --with-tools --with-libvorbis

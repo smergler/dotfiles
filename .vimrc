@@ -28,7 +28,7 @@ silent! set mouse=nvc       " Use the mouse, but not in insert mode
 
 set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set omnifunc=ft-php-omni              " this one neither
-
+set clipboard=unnamed           " Set bi-directional clipboard
 
 " SubSection: Folding Options
 " ---------------------------------------------------------------------------
@@ -141,6 +141,8 @@ nmap <Leader>bl :ls<CR>
 
 " fugitive mappings
 map gs :Gstatus<CR>
+map gc :Gcommit<CR>
+map gp :Git push<CR>
 
 " git gutter mappings
 highlight clear SignColumn

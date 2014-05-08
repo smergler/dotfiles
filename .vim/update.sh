@@ -72,6 +72,9 @@ repos=(
   https://github.com/airblade/vim-gitgutter.git
   # let me see buffers
   https://github.com/bling/vim-airline.git
+  # multiple cursors
+  https://github.com/terryma/vim-multiple-cursors.git
+
 
   #syntax files
   # https://github.com/digitaltoad/vim-jade.git
@@ -84,6 +87,7 @@ repos=(
   # https://github.com/wavded/vim-stylus.git
   # https://github.com/vim-scripts/Railscasts-Theme-GUIand256color.git
   # https://github.com/vim-scripts/lighttpd-syntax.git
+  https://github.com/derekwyatt/vim-scala.git
 
   )
 

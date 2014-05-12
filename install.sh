@@ -2,7 +2,7 @@
 #
 # Ian's dotfile installer. Usage:
 #
-#   curl https://raw.github.com/smergler/dotfiles/master/install.sh | sh
+#   curl https://raw.github.com/smergler/dotfiles/master/install.sh | bash
 #
 # or:
 #

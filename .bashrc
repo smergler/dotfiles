@@ -5,8 +5,14 @@
 # If not running interactively, don't do anything
 [ -z "$PS1" ] && return
 
-if [ -f `brew --prefix`/etc/bash_completion ]; then
-  . `brew --prefix`/etc/bash_completion
+function has() {
+    return $( which $1 >/dev/null )
+}
+
+if has brew; then
+    if [ -f `brew --prefix`/etc/bash_completion ]; then
+      . `brew --prefix`/etc/bash_completion
+    fi
 fi
 
 

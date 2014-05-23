@@ -21,6 +21,7 @@ set incsearch               " Search as you type
 set ignorecase              " Case insensitive
 set ruler                   " show the colum width and line number
 syntax on
+autocmd BufEnter * :syntax sync fromstart " sync syntax from start of file (fixes bug with folds, but can slow down vim)
 colorscheme default
 filetype plugin on
 "set mouse:a
@@ -29,6 +30,8 @@ silent! set mouse=nvc       " Use the mouse, but not in insert mode
 set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set omnifunc=ft-php-omni              " this one neither
 set clipboard=unnamed           " Set bi-directional clipboard
+set wildignorecase              " allows for opening files with case insensitivity
+
 
 " SubSection: Folding Options
 " ---------------------------------------------------------------------------

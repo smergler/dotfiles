@@ -56,11 +56,11 @@ repos=(
   # writing html tags for fun and profit
   # see: http://www.catonmat.net/blog/vim-plugins-ragtag-allml-vim/
   https://github.com/tpope/vim-ragtag.git
-  # surround phrase with something (ex. '  instead of ")
+  # surround phrase with something (ex. \'  instead of \")
   https://github.com/tpope/vim-surround.git
-  # haven't figured this one out yet, but reddit pointed me to it
+  # auto find, like quicksilver for osx but for text files in the wd
   https://github.com/kien/ctrlp.vim.git
-  # browser, but I think it requres a few things I don't have
+  # browser, but I think it requres a few things I don\'t have
   # https://github.com/majutsushi/tagbar.git
   # not quite sure about this one  TODO: re-read it
   #https://github.com/michaeljsmith/vim-indent-object.git

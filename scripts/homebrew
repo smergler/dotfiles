@@ -23,8 +23,8 @@ brew install wget --enable-iri
 
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
-brew untap josegonzalez/homebrew-php
-brew tap josegonzalez/homebrew-php
+#brew untap josegonzalez/homebrew-php
+#brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
    node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
     multitail unrar p7zip
@@ -34,8 +34,8 @@ pecl install -f ssh2
 
 brew install vim --override-system-vi --with-lua --with-perl --with-tcl
 
-
-brew install ffmpeg --with-openssl --with-jpeg --with-tools --with-libvorbis
+brew install lame
+brew install ffmpeg --with-openssl --with-openjpeg --with-tools --with-libvorbis --with-libvpx
 brew install youtube-dl
 
 curl http://python-distribute.org/distribute_setup.py | sudo python
@@ -50,7 +50,7 @@ brew install ack rename tree
 
 
 brew install elasticsearch;
-curl -sS https://getcomposer.org/installer | php
+#curl -sS https://getcomposer.org/installer | php
 # install the mongodb river extension
 $(dirname $(realpath $(which elasticsearch)))/plugin  --install com.github.richardwilly98.elasticsearch/elasticsearch-river-mongodb/1.7.3
 

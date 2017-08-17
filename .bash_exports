@@ -1,20 +1,17 @@
 #!/bin/bash
 
 
-MACOSX_DEPLOYMENT_TARGET=10.9
-export MACOSX_DEPLOYMENT_TARGET
-
+export MACOSX_DEPLOYMENT_TARGET=10.9
+export GOPATH=$HOME/go
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/PEAR:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
 export PATH="/usr/local/Cellar/mysql/5.1.54/bin:$PATH"
-if has brew; then
-    export PATH="$(brew --prefix josegonzalez/php/php55)/bin:$PATH"
-fi
 export PATH="/Users/smergler/android/sdk/platform-tools:$PATH"
 export PATH="/usr/local/opt/gettext/bin:$PATH"
 export PATH="/Users/smergler/bin:$PATH"
+export PATH=$GOPATH/bin:$PATH
 
 # Prefer US English and use UTF-8
 export LC_ALL="en_US.UTF-8"

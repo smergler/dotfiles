@@ -1,7 +1,6 @@
 #!/bin/bash
-sudo echo "";
-sudo brew update;
-sudo brew outdated | xargs brew upgrade;
+brew update;
+brew outdated | xargs brew upgrade;
 #sudo pear channel-update pear.php.net;
 #sudo pear channel-update pear.phpunit.de;
 #sudo pear upgrade;

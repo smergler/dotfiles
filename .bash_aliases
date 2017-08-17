@@ -33,6 +33,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
+alias gfpo="git push -f origin"
 
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
@@ -112,6 +113,9 @@ alias cpan='sudo /usr/bin/cpan5.10.0'
 # wget w/o letting the server know we are using wget
 alias wget='wget --user-agent=""'
 
+alias dc="docker-compose"
 
-alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0'
+alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
+
+alias gotwc='go test -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out'

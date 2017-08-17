@@ -30,7 +30,7 @@ silent! set mouse=nvc       " Use the mouse, but not in insert mode
 set ofu=syntaxcomplete#Complete " Set omni-completion method.
 set omnifunc=ft-php-omni              " this one neither
 set clipboard=unnamed           " Set bi-directional clipboard
-set wildignorecase              " allows for opening files with case insensitivity
+"set wildignorecase              " allows for opening files with case insensitivity
 
 
 " SubSection: Folding Options
@@ -67,7 +67,7 @@ nnoremap <C-c> zA
 map <C-t> :NERDTreeToggle<CR>
 
 map <C-e> :e#<CR>
-map b :e#<CR>
+map B :e#<CR>
 map <C-x>o <C-w><C-w>
 map <C-x>0 <C-w>c
 map <C-x>1 <C-w>o

@@ -44,12 +44,12 @@ set foldminlines=1          " Only Fold when more than one line
 " SubSection: Tab Options
 " ---------------------------------------------------------------------------
 set autoindent              " Carry over indenting from previous line
-set smarttab                " a <Tab> in front of a line inserts blanks
+"set smarttab                " a <Tab> in front of a line inserts blanks
                             " according to shiftwidth
 set shiftwidth=2            " The # of spaces for indenting.
 set tabstop=2               " option 4 from :help tabstop
 set softtabstop=2           " Tab key results in 2 spaces
-"set noexpandtab             " Keep ALL the tabs
+set expandtab             " Keep ALL the tabs
 set bs=2                    " Allow backspacing of everything
 set tw=80                   " set max line to 80
 set exrc                    " if a .vimrc file is in the working dir, use it
@@ -67,7 +67,7 @@ nnoremap <C-c> zA
 map <C-t> :NERDTreeToggle<CR>
 
 map <C-e> :e#<CR>
-map B :e#<CR>
+map e :e#<CR>
 map <C-x>o <C-w><C-w>
 map <C-x>0 <C-w>c
 map <C-x>1 <C-w>o

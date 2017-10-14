@@ -23,8 +23,6 @@ brew install wget --enable-iri
 
 brew tap homebrew/dupes
 brew install homebrew/dupes/grep
-#brew untap josegonzalez/homebrew-php
-#brew tap josegonzalez/homebrew-php
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
    node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
     multitail unrar p7zip
@@ -42,12 +40,8 @@ curl http://python-distribute.org/distribute_setup.py | sudo python
 curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
 sudo pip install --upgrade fabric pssh
 
-sudo npm install grunt
-sudo npm install -g bbb
-
 # Install everything else
 brew install ack rename tree
-
 
 brew install elasticsearch;
 #curl -sS https://getcomposer.org/installer | php
@@ -73,6 +67,11 @@ brew cask install caffeine
 brew cask install alfred
 brew cask install clipmenu
 brew cask install mou
+
+# install wine
+brew tap caskroom/cask
+brew cask install java xquartz
+brew install wine
 
 
 # Remove outdated versions from the cellar

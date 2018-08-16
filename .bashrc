@@ -23,3 +23,6 @@ for file in ~/.{bash_prompt,bash_exports,bash_aliases,functions,aliases,extra}; 
 done
 unset file
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

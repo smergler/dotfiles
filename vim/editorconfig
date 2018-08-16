@@ -23,10 +23,10 @@ insert_final_newline = false
 
 # Tabs(2) in PHP unless otherwise specified
 [**.php]
-indent_style = tabs
+indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = false
-indent_size = 2
+indent_size = 4
 
 # use the Airbnb standard
 [**.js]
@@ -59,6 +59,11 @@ indent_style = tab
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[**.yml]
+indent_size = 2
+indent_style = space
+trim_trailing_whitespace = true
+insert_final_newline = true
 
 ####################################
 # Samples...uncomment to use

@@ -57,6 +57,46 @@ set secure                  " restrict usage of some commands in non-default .vi
 
 
 
+" Section: Plugs
+" ---------------------------------------------------------------------------
+"
+" Specify a directory for plugins
+" - Avoid using standard Vim directory names like 'plugin'
+call plug#begin('~/.vim/plugged')
+
+
+Plug 'johngrib/vim-game-snake'
+
+" NERDTree - A tree explorer plugin for vim.
+Plug 'scrooloose/nerdtree'
+
+" Syntastic - Syntax checking hacks for vim
+Plug 'vim-syntastic/syntastic'
+
+" vim-fugitive - Git Wrapper
+Plug 'tpope/vim-fugitive'
+
+" git gutter - Git diff-er
+Plug 'airblade/vim-gitgutter'
+
+" Mustache template system for VIMScript
+Plug 'tobyS/vmustache'
+
+" UltiSnips - The ultimate snippet solution for Vim
+Plug 'SirVer/ultisnips'
+
+" pdv PHP Documentor for VIM
+Plug 'tobyS/pdv'
+
+" ctrlp Fuzzy file, buffer, mru, tag, etc finder
+Plug 'ctrlpvim/ctrlp.vim'
+
+" Editor config
+Plug 'editorconfig/editorconfig-vim'
+
+" Initialize plugin system
+call plug#end()
+
 " Section: Mappings
 " ---------------------------------------------------------------------------
 " Why not use the space or return keys to toggle folds?
@@ -109,12 +149,6 @@ set fileencodings=utf-8
 autocmd BufWritePre * :%s/\s\+$//e
 set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
-
-" Pathogen
-filetype off " Pathogen needs to run before plugin indent on
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags() " generate helptags for everything in 'runtimepath'
-filetype plugin indent on
 
 au BufRead,BufNewFile *.handlebars,*.hbs,*.html set ft=html syntax=handlebars
 let g:syntastic_json_checkers=['jsonlint']

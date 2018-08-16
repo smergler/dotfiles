@@ -31,6 +31,8 @@ pecl install v8js-beta beanstalkd
 pecl install -f ssh2
 
 brew install vim --override-system-vi --with-lua --with-perl --with-tcl
+# ctags for vim
+brew install ctags
 
 brew install lame
 brew install ffmpeg --with-openssl --with-openjpeg --with-tools --with-libvorbis --with-libvpx

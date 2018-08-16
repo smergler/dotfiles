@@ -49,9 +49,9 @@ set autoindent              " Carry over indenting from previous line
 set shiftwidth=2            " The # of spaces for indenting.
 set tabstop=2               " option 4 from :help tabstop
 set softtabstop=2           " Tab key results in 2 spaces
-set expandtab             " Keep ALL the tabs
+set expandtab               " Keep ALL the tabsa
 set bs=2                    " Allow backspacing of everything
-set tw=80                   " set max line to 80
+set tw=1180                   " set max line to 80
 set exrc                    " if a .vimrc file is in the working dir, use it
 set secure                  " restrict usage of some commands in non-default .vimrc files
 
@@ -127,20 +127,24 @@ endfunction
 " i always, ALWAYS hit ":W" instead of ":w"
 command! Q q
 command! W w
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
+let g:syntastic_json_checkers=['jsonlint']
 
 
-
-" Syntastic
+" Status line
+set statusline=
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%*
-
+set laststatus=2
 
 " Lithium configuration
 "-- Encoding
@@ -151,14 +155,11 @@ set list
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 au BufRead,BufNewFile *.handlebars,*.hbs,*.html set ft=html syntax=handlebars
-let g:syntastic_json_checkers=['jsonlint']
 
 let g:ragtag_global_maps = 1
 
-source ~/.vim/php-doc.vim
-inoremap <C-O> <ESC>:call PhpDocSingle()<CR>i
-nnoremap <C-O> :call PhpDocSingle()<CR>
-vnoremap <C-O> :call PhpDocRange()<CR>
+let g:pdv_template_dir = $HOME ."/.vim/plugged/pdv/templates_snip"
+nnoremap <C-o> :call pdv#DocumentWithSnip()<CR>
 
 let g:ctrlp_map = '<c-p>'
 let g:ctrlp_cmd = 'CtrlPMixed'
@@ -188,7 +189,9 @@ map gs :Gstatus<CR>
 map gc :Gcommit<CR>
 map gp :Git push<CR>
 
-" git gutter mappings
-highlight clear SignColumn
-map gn ]c
-map gp [c
+"gitgutter mappings
+nmap ]h <Plug>GitGutterNextHunk
+nmap [h <Plug>GitGutterPrevHunk
+nmap ha <Plug>GitGutterStageHunk
+nmap hr <Plug>GitGutterUndoHunk
+nmap hv <Plug>GitGutterPreviewHunk

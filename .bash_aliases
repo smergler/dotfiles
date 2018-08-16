@@ -35,6 +35,9 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 alias undopush="git push -f origin HEAD^:master"
 alias gfpo="git push -f origin"
 
+# See a git tree
+alias gltree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
+
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 alias gs='git status -s -uno'

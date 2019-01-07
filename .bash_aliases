@@ -41,6 +41,8 @@ alias gltree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow
 # git root
 alias gr='[ ! -z `git rev-parse --show-cdup` ] && cd `git rev-parse --show-cdup || pwd`'
 alias gs='git status -s -uno'
+# git show stash diff
+alias gss='git stash show -p'
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"

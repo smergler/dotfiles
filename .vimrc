@@ -143,6 +143,12 @@ set statusline=
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%{FugitiveStatusline()}
+set statusline+=\  "separator
+set statusline+=%l
+set statusline+=/
+set statusline+=%L
+set statusline+=\  "separator
+set statusline+=%f "tail of the filename
 set statusline+=%*
 set laststatus=2
 
@@ -190,8 +196,8 @@ map gc :Gcommit<CR>
 map gp :Git push<CR>
 
 "gitgutter mappings
-nmap ]h <Plug>GitGutterNextHunk
-nmap [h <Plug>GitGutterPrevHunk
-nmap ha <Plug>GitGutterStageHunk
-nmap hr <Plug>GitGutterUndoHunk
-nmap hv <Plug>GitGutterPreviewHunk
+"nmap ]h <Plug>GitGutterNextHunk
+"nmap [h <Plug>GitGutterPrevHunk
+"nmap ha <Plug>GitGutterStageHunk
+"nmap hr <Plug>GitGutterUndoHunk
+"nmap hv <Plug>GitGutterPreviewHunk

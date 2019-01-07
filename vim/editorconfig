@@ -65,6 +65,16 @@ indent_style = space
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[**.go]
+indent_style = tab
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[**.tf]
+indent_size = 2
+indent_style = space
+
+
 ####################################
 # Samples...uncomment to use
 ####################################

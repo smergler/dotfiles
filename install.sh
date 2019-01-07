@@ -137,8 +137,10 @@ fi
 
 note "Running Scripts"
 for script in scripts/*; do
-	echo "Running $script";
-	sh $script
+    if [ -f $script ]; then
+        echo "Running $script";
+        sh $script
+    fi
 done
 
 

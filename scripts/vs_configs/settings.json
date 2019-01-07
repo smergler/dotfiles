@@ -1,0 +1,10 @@
+{
+    "terminal.external.osxExec": "iTerm.app",
+    "editor.renderControlCharacters": true,
+    "editor.renderWhitespace": "all",
+    "window.zoomLevel": -1,
+    "editor.minimap.enabled": false,
+    "workbench.editor.enablePreviewFromQuickOpen": false,
+    "git.autofetch": true,
+    "workbench.editor.enablePreview": true 
+}

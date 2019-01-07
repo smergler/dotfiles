@@ -1,0 +1,12 @@
+#!/bin/sh
+
+code --install-extension eamodio.gitlens
+code --install-extension ms-vscode.go
+code --install-extension vscodevim.vim
+code --install-extension peterjausovec.vscode-docker
+
+
+for config in ${PWD}/scripts/vs_configs/*; do
+        ln -s $config ~/Library/Application\ Support/Code/User
+done
+

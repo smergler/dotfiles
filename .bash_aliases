@@ -8,8 +8,6 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ~="cd ~" # `cd` is probably faster to type though
-alias -- -="cd -"
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -100,27 +98,22 @@ done
 # Stuff I never really use but cannot delete either because of http://xkcd.com/530/
 alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
-alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+# TODO look how to do this in osascript
+#alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
 
 alias df="df -h"
 alias cls='clear && ls'
 alias scp='scp -2Cr'
 
-alias mysql_start='mysqld --bootstrap --skip-grant-tables'
-
-#mongo Db
-alias cpan='sudo /usr/bin/cpan5.10.0'
-#alias php='php --php-ini=/private/etc/php.ini'
-
-# make sure sudo uses the correct path
-#alias sudo='sudo env PATH=$PATH'
-
 # wget w/o letting the server know we are using wget
 alias wget='wget --user-agent=""'
 
+# docker-related fun
 alias dc="docker-compose"
+alias dps="docker ps"
 
+# regular fun
 alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
 
-
+# test stuff in go and show coverage
 alias gotwc='go test -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out'

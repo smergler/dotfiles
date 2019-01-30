@@ -15,13 +15,9 @@ if has brew; then
     fi
 fi
 
-
 # Load ~/.extra, ~/.bash_prompt, ~/.exports, ~/.aliases and ~/.functions
 # ~/.extra can be used for settings you don’t want to commit
-for file in ~/.{bash_prompt,bash_exports,bash_aliases,functions,aliases,extra}; do
+for file in ~/.{bash_prompt,bash_exports,bash_aliases,bash_functions,functions,aliases,extra}; do
 	[ -r "$file" ] && source "$file"
 done
 unset file
-
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*

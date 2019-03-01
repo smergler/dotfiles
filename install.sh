@@ -130,10 +130,10 @@ note "Initializing tools..."
     # Post-install scripts might customize this further.
     # cp -v $basedir/.gitconfig.base $HOME/.gitconfig
 #fi
-if has vim; then
-  cd $basedir
-  ./.vim/update.sh all
-fi
+#if has vim; then
+#  cd $basedir
+#  ./.vim/update.sh all
+#fi
 
 note "Running Scripts"
 for script in scripts/*; do

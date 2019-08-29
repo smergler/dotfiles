@@ -94,6 +94,24 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Editor config
 Plug 'editorconfig/editorconfig-vim'
 
+" typescript syntax for vim
+Plug 'leafgarland/typescript-vim'
+
+" Vim Plugin for typescript
+Plug 'Quramy/tsuquyomi'
+
+" adds API Blueprint syntax
+Plug 'kylef/apiblueprint.vim'
+
+"lightline updates the statusline/tabline
+Plug 'itchyny/lightline.vim'
+
+" Vim-go for all your go needs
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+
+" capslock.vim to train for newer macs
+Plug 'tpope/vim-capslock'
+
 " Initialize plugin system
 call plug#end()
 
@@ -132,8 +150,8 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_javascript_checkers = ['eslint', './node_modules/.bin/eslint']
+let g:syntastic_javascript_eslint_exe = 'npm run lint'
 let g:syntastic_php_checkers = ['php', 'phpcs', 'phpmd']
 let g:syntastic_json_checkers=['jsonlint']
 
@@ -195,9 +213,16 @@ map gs :Gstatus<CR>
 map gc :Gcommit<CR>
 map gp :Git push<CR>
 
+" capslock mapping
+imap <C-L> <C-O><Plug>CapsLockToggle
+
 "gitgutter mappings
 "nmap ]h <Plug>GitGutterNextHunk
 "nmap [h <Plug>GitGutterPrevHunk
 "nmap ha <Plug>GitGutterStageHunk
 "nmap hr <Plug>GitGutterUndoHunk
 "nmap hv <Plug>GitGutterPreviewHunk
+
+" Press i to enter insert mode, and ii to exit.
+imap ii <Esc>
+

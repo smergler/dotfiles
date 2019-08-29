@@ -1,9 +1,15 @@
 #!/bin/sh
 
+# git related
 code --install-extension eamodio.gitlens
-code --install-extension ms-vscode.go
+# vim keybindings
 code --install-extension vscodevim.vim
+# Golang extension
+code --install-extension ms-vscode.go
+# Docker Extension
 code --install-extension peterjausovec.vscode-docker
+# PHP intellisense
+code --install-extension felixfbecker.php-intellisense
 
 
 for config in ${PWD}/scripts/vs_configs/*; do

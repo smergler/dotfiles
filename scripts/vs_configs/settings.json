@@ -6,5 +6,17 @@
     "editor.minimap.enabled": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "git.autofetch": true,
-    "workbench.editor.enablePreview": true 
+    "workbench.editor.enablePreview": true,
+    "files.autoSave": "onFocusChange",
+    "editor.acceptSuggestionOnCommitCharacter": false,
+    "go.formatTool": "gofmt",
+    "go.lintOnSave": "file",
+    "[go]": {
+        "editor.formatOnSave": true 
+    },
+    "files.trimTrailingWhitespace": true,
+    "eslint.autoFixOnSave": true,
+    "workbench.statusBar.visible": false,
+    "workbench.colorTheme": "Default High Contrast",
+    "vim.foldfix": true
 }

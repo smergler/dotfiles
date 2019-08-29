@@ -42,6 +42,13 @@ alias gs='git status -s -uno'
 # git show stash diff
 alias gss='git stash show -p'
 
+# this will do 3 things
+# first, get the latest master
+# then delete all merged branches
+# then delete all squash and merged branches (since they don't show up as merged)
+# last part lovingly stolen from https://medium.com/opendoor-labs/cleaning-up-branches-with-githubs-squash-merge-43138cc7585e
+alias rmMergedBranches='git checkout master && git pull && git branch --merged | egrep -v "(^\*|master)" | xargs git branch -d  && comm -12 <(git branch | sed "s/ *//g") <(git remote prune origin | sed "s/^.*origin\///g") | xargs -L1 -J % git branch -D %'
+
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
 alias localip="ipconfig getifaddr en1"
@@ -100,6 +107,7 @@ alias stfu="osascript -e 'set volume output muted true'"
 alias pumpitup="osascript -e 'set volume 10'"
 # TODO look how to do this in osascript
 #alias hax="growlnotify -a 'Activity Monitor' 'System error' -m 'WTF R U DOIN'"
+alias turnOnBluetooth="blueutil -p 1"
 
 alias df="df -h"
 alias cls='clear && ls'
@@ -110,10 +118,11 @@ alias wget='wget --user-agent=""'
 
 # docker-related fun
 alias dc="docker-compose"
-alias dps="docker ps"
+alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
+alias dpn="docker ps --format '{{.Names}}'"
 
 # regular fun
-alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s"'
+alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s" --metadata-from-title "(?P<title>.+) --embed-thumbnail"'
 
 # test stuff in go and show coverage
 alias gotwc='go test -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out'

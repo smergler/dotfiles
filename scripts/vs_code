@@ -7,7 +7,7 @@ code --install-extension vscodevim.vim
 # Golang extension
 code --install-extension ms-vscode.go
 # Docker Extension
-code --install-extension peterjausovec.vscode-docker
+code --install-extension ms-azuretools.vscode-docker
 # PHP intellisense
 code --install-extension felixfbecker.php-intellisense
 

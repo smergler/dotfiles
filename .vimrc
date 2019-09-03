@@ -112,6 +112,10 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 " capslock.vim to train for newer macs
 Plug 'tpope/vim-capslock'
 
+" Vim Airline - apparently very pretty
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
 " Initialize plugin system
 call plug#end()
 
@@ -122,7 +126,8 @@ nnoremap <space> za
 nnoremap <CR> za
 nnoremap <C-c> zA
 
-map <C-t> :NERDTreeToggle<CR>
+" NERDTree plugin specific commands
+:nnoremap <C-g> :NERDTreeToggle<CR>
 
 map <C-e> :e#<CR>
 map e :e#<CR>
@@ -225,4 +230,8 @@ imap <C-L> <C-O><Plug>CapsLockToggle
 
 " Press i to enter insert mode, and ii to exit.
 imap ii <Esc>
+
+" vim-go settings
+let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save
+let g:go_auto_type_info = 1           " Automatically get signature/type info for object under cursor
 

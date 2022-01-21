@@ -9,7 +9,7 @@
 set sm                      " show matching brace or parenthesis while inserting
 set ic                      " Change default to ignore case for text searches
 set hls                     " Highlight searches
-
+set shell=/bin/bash         " test for syntastic
 
 set bdir=~/.vim/backup/
 set dir=~/.vim/swap/
@@ -107,7 +107,7 @@ Plug 'kylef/apiblueprint.vim'
 Plug 'itchyny/lightline.vim'
 
 " Vim-go for all your go needs
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+" Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 " capslock.vim to train for newer macs
 Plug 'tpope/vim-capslock'
@@ -115,6 +115,10 @@ Plug 'tpope/vim-capslock'
 " Vim Airline - apparently very pretty
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" CoC - Code completion ... latest release branch
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
 
 " Initialize plugin system
 call plug#end()
@@ -227,9 +231,6 @@ imap <C-L> <C-O><Plug>CapsLockToggle
 "nmap ha <Plug>GitGutterStageHunk
 "nmap hr <Plug>GitGutterUndoHunk
 "nmap hv <Plug>GitGutterPreviewHunk
-
-" Press i to enter insert mode, and ii to exit.
-imap ii <Esc>
 
 " vim-go settings
 let g:go_fmt_command = "goimports"    " Run goimports along gofmt on each save

@@ -9,8 +9,18 @@ code --install-extension ms-vscode.go
 # Docker Extension
 code --install-extension ms-azuretools.vscode-docker
 # PHP intellisense
-code --install-extension felixfbecker.php-intellisense
+# code --install-extension felixfbecker.php-intellisense
 
+# PHP debug
+code --install-extension felixfbecker.php-debug
+# PHP Intelephense
+code --install-extension bmewburn.vscode-intelephense-client
+# PHPCS
+code --install-extension ikappas.phpcs
+# PHP Extension Pack
+code --install-extension felixfbecker.php-pack
+# PHP DocBlocker
+code --install-extension neilbrayfield.php-docblocker
 
 for config in ${PWD}/scripts/vs_configs/*; do
         ln -s $config ~/Library/Application\ Support/Code/User

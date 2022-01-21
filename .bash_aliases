@@ -32,6 +32,7 @@ alias c='pygmentize -O style=monokai -f console256 -g'
 # Undo a `git push`
 alias undopush="git push -f origin HEAD^:master"
 alias gfpo="git push -f origin"
+alias gpo="git push -u origin $(parse_git_branch)"
 
 # See a git tree
 alias gltree="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue) <%an> %Creset' --abbrev-commit"
@@ -117,12 +118,17 @@ alias scp='scp -2Cr'
 alias wget='wget --user-agent=""'
 
 # docker-related fun
-alias dc="docker-compose"
+alias dc="docker compose"
 alias dps="docker ps --format 'table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.Status}}'"
 alias dpn="docker ps --format '{{.Names}}'"
 
 # regular fun
-alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s" --metadata-from-title "(?P<title>.+) --embed-thumbnail"'
+alias downloadFromYoutube='youtube-dl -x --audio-format mp3 --audio-quality 0 --output "%(title)s.%(ext)s" --metadata-from-title "(?P<title>.+)"'
 
 # test stuff in go and show coverage
 alias gotwc='go test -coverprofile=coverage.out && go tool cover -html=coverage.out && rm coverage.out'
+
+
+# docker and k8s commands I'm not sure about yet
+alias dexec="docker exec -it"
+alias k='kubectl'

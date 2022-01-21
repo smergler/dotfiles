@@ -19,28 +19,22 @@ brew install findutils
 brew install bash
 
 # Install wget with IRI support
-brew install wget --enable-iri
+brew install wget
 
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
 brew install dos2unix libmemcached nginx readline bash-completion mcrypt \
-   node redis git memcached mongodb jsl phantomjs graphicsmagick jsmin \
+   node redis git memcached jsl phantomjs graphicsmagick jsmin \
     multitail unrar p7zip
 brew install phplint ack tmux v8
 pecl install v8js-beta beanstalkd
 pecl install -f ssh2
 
-brew install vim --override-system-vi --with-lua --with-perl --with-tcl
+brew install vim
 # ctags for vim
 brew install ctags
 
 brew install lame
-brew install ffmpeg --with-openssl --with-openjpeg --with-tools --with-libvorbis --with-libvpx
+brew install ffmpeg
 brew install youtube-dl
-
-curl http://python-distribute.org/distribute_setup.py | sudo python
-curl https://raw.github.com/pypa/pip/master/contrib/get-pip.py | sudo python
-sudo pip install --upgrade fabric pssh
 
 # Install everything else
 brew install ack rename tree
@@ -53,6 +47,7 @@ $(dirname $(realpath $(which elasticsearch)))/plugin  --install com.github.richa
 # install cask, chrome, and quick look extensions
 brew tap phinze/homebrew-cask
 brew install brew-cask
+brew cask install mongodb
 brew cask install google-chrome
 brew cask install qlcolorcode
 brew cask install qlstephen
@@ -64,6 +59,8 @@ brew cask install webp-quicklook
 brew cask install suspicious-package
 brew cask install visual-studio-code
 brew cask install slack
+brew cask install docker && open /Applications/Docker.app
+brew cask install signal
 
 qlmanage -r
 

@@ -2,7 +2,7 @@
 #
 # Ian's dotfile installer. Usage:
 #
-#   curl https://raw.github.com/smergler/dotfiles/master/install.sh | bash
+#   curl https://raw.githubusercontent.com/smergler/dotfiles/master/install.sh |zsh
 #
 # or:
 #
@@ -12,7 +12,7 @@
 
 basedir=$HOME/.dotfiles
 bindir=$HOME/bin
-gitbase=git://github.com/smergler/dotfiles.git
+gitbase=git@github.com:smergler/dotfiles.git
 tarball=http://github.com/smergler/dotfiles/tarball/master
 
 function has() {

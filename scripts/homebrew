@@ -47,31 +47,31 @@ $(dirname $(realpath $(which elasticsearch)))/plugin  --install com.github.richa
 # install cask, chrome, and quick look extensions
 brew tap phinze/homebrew-cask
 brew install brew-cask
-brew cask install mongodb
-brew cask install google-chrome
-brew cask install qlcolorcode
-brew cask install qlstephen
-brew cask install qlmarkdown quicklook-json
-brew cask install qlprettypatch
-brew cask install quicklook-csv
-brew cask install betterzipql
-brew cask install webp-quicklook
-brew cask install suspicious-package
-brew cask install visual-studio-code
-brew cask install slack
-brew cask install docker && open /Applications/Docker.app
-brew cask install signal
+brew install cask mongodb
+brew install cask google-chrome
+brew install cask qlcolorcode
+brew install cask qlstephen
+brew install cask qlmarkdown quicklook-json
+brew install cask qlprettypatch
+brew install cask quicklook-csv
+brew install cask betterzipql
+brew install cask webp-quicklook
+brew install cask suspicious-package
+brew install cask visual-studio-code
+brew install cask slack
+brew install cask docker && open /Applications/Docker.app
+brew install cask signal
 
 qlmanage -r
 
-brew cask install caffeine
-brew cask install alfred
-brew cask install clipmenu
-brew cask install mou
+brew install cask caffeine
+brew install cask alfred
+brew install cask clipmenu
+brew install cask mou
 
 # install wine
-brew tap caskroom/cask
-brew cask install java xquartz
+brew tap homebrew/cask
+brew install cask java xquartz
 brew install wine
 
 # Remove outdated versions from the cellar

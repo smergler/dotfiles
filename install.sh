@@ -76,7 +76,7 @@ if [ -e $basedir ]; then
     cd $basedir
     if [ -e .git ]; then
         note "Updating dotfiles from git..."
-        git pull --rebase origin master
+        # git pull --rebase origin master
     else
         unpack_tarball
     fi
@@ -95,60 +95,74 @@ else
     fi
 fi
 
-note "Installing dotfiles..."
-for path in .* ; do
-    case $path in
-        .|..|.git)
-            continue
-            ;;
-        *)
-            link $basedir/$path $HOME/$path
-            ;;
-    esac
-done
-
-note "Installing bin/ directory..."
-mkdir -v -p $bindir
-for path in bin/* ; do
-    relpath=$( basename $path )
-    link $basedir/$path $bindir/$relpath
-done
-
-note "Symlinking Vim configurations..."
-for rc in vim gvim; do
-    link $basedir/vim/${rc}rc $HOME/.${rc}rc
-    if [ ! -e $HOME/.${rc}local ]; then
-        touch $HOME/.${rc}local
-    fi
-done
-
-link $basedir/vim/editorconfig $HOME/.editorconfig
+note "Install Submodules"
+git submodule update --init --recursive
 
 
-note "Initializing tools..."
-#if has git; then
-    # Post-install scripts might customize this further.
-    # cp -v $basedir/.gitconfig.base $HOME/.gitconfig
-#fi
-#if has vim; then
-#  cd $basedir
-#  ./.vim/update.sh all
-#fi
+if [ -e ~/.oh-my-zsh ]; then 
+    note "OhMyZSH is already installed"
+else 
+    note "Installing OhMyZSH" 
+    git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
+fi 
 
-note "Running Scripts"
-for script in scripts/*; do
-    if [ -f $script ]; then
-        echo "Running $script";
-        sh $script
-    fi
-done
+note "Running dotbot install" 
+./install 
+
+# note "Installing dotfiles..."
+# for path in .* ; do
+#     case $path in
+#         .|..|.git)
+#             continue
+#             ;;
+#         *)
+#             link $basedir/$path $HOME/$path
+#             ;;
+#     esac
+# done
+
+# note "Installing bin/ directory..."
+# mkdir -v -p $bindir
+# for path in bin/* ; do
+#     relpath=$( basename $path )
+#     link $basedir/$path $bindir/$relpath
+# done
+
+# note "Symlinking Vim configurations..."
+# for rc in vim gvim; do
+#     link $basedir/vim/${rc}rc $HOME/.${rc}rc
+#     if [ ! -e $HOME/.${rc}local ]; then
+#         touch $HOME/.${rc}local
+#     fi
+# done
+
+# link $basedir/vim/editorconfig $HOME/.editorconfig
 
 
-note "Running post-install script, if any..."
-postinstall=$HOME/.postinstall
-if [ -e $postinstall ]; then
-    # A post-install script can the use functions defined above.
-    . $postinstall
-fi
+# note "Initializing tools..."
+# #if has git; then
+#     # Post-install scripts might customize this further.
+#     # cp -v $basedir/.gitconfig.base $HOME/.gitconfig
+# #fi
+# #if has vim; then
+# #  cd $basedir
+# #  ./.vim/update.sh all
+# #fi
 
-note "Done."
+# note "Running Scripts"
+# for script in scripts/*; do
+#     if [ -f $script ]; then
+#         echo "Running $script";
+#         sh $script
+#     fi
+# done
+
+
+# note "Running post-install script, if any..."
+# postinstall=$HOME/.postinstall
+# if [ -e $postinstall ]; then
+#     # A post-install script can the use functions defined above.
+#     . $postinstall
+# fi
+
+# note "Done."

@@ -1,0 +1,19 @@
+- defaults:
+    link:
+      relink: true
+      force: true
+
+- clean: 
+    '~/':
+        force: true 
+    '~/.config':
+        recursive: true 
+
+- link: 
+    ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
+    ~/.editorconfig: editorconfig 
+    ~/.vimrc: vim/vimrc
+    ~/vim: vim/vim 
+    ~/.config/tmux: tmux
+    ~/bin: bin

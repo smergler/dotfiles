@@ -3,17 +3,21 @@
       relink: true
       force: true
 
-- clean: 
+- clean:
     '~/':
-        force: true 
+        force: true
     '~/.config':
-        recursive: true 
+        recursive: true
 
-- link: 
+- shell:
+    - description:  initialize files
+      command: if [ ! -d ~/.config ]; then mkdir ~/.config; fi
+
+- link:
     ~/.zshrc: zsh/zshrc
     ~/.p10k.zsh: zsh/p10k.zsh
-    ~/.editorconfig: editorconfig 
+    ~/.editorconfig: editorconfig
     ~/.vimrc: vim/vimrc
-    ~/vim: vim/vim 
+    ~/.vim: vim/vim
     ~/.config/tmux: tmux
     ~/bin: bin

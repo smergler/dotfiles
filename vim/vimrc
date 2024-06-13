@@ -12,6 +12,7 @@ augroup END
 
 " Pathogen -------------------------------- {{{
 " "https://github.com/tpope/vim-pathogen"
+runtime bundle/vim-pathogen/autoload/pathogen.vim
 execute pathogen#infect()
 " }}}
 
@@ -140,6 +141,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " }}}
 " }}}
 
+" Trim on Save ----------------------------------- {{{
+" trim spaces at EOL
+autocmd BufWritePre * :%s/\s\+$//e
+" }}}
 " }}}
 
 " Plugins --------------------------------------- {{{

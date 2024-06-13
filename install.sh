@@ -99,15 +99,15 @@ note "Install Submodules"
 git submodule update --init --recursive
 
 
-if [ -e ~/.oh-my-zsh ]; then 
+if [ -e ~/.oh-my-zsh ]; then
     note "OhMyZSH is already installed"
-else 
-    note "Installing OhMyZSH" 
+else
+    note "Installing OhMyZSH"
     git clone https://github.com/ohmyzsh/ohmyzsh.git ~/.oh-my-zsh
-fi 
+fi
 
-note "Running dotbot install" 
-./install 
+note "Running dotbot install"
+$basedir/install
 
 # note "Installing dotfiles..."
 # for path in .* ; do

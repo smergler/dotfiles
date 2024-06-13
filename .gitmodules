@@ -140,3 +140,9 @@
 [submodule "libs/scm_breeze"]
 	path = libs/scm_breeze
 	url = https://github.com/scmbreeze/scm_breeze.git
+[submodule "libs/dotbot-if"]
+	path = libs/dotbot-if
+	url = https://github.com/wonderbeyond/dotbot-if.git
+[submodule "libs/dotbot-brew"]
+	path = libs/dotbot-brew
+	url = https://github.com/d12frosted/dotbot-brew.git

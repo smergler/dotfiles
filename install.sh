@@ -113,8 +113,9 @@ $basedir/install
 ZSH_SHELL=$(which zsh)
 if [ $SHELL != $ZSH_SHELL ]; then
     note "Will try switching to ZSH, may require password"
+    sudo sh -c "echo $(which zsh) >> /etc/shells"
     chsh -s $(which zsh)
-    note "Please try logging out and log back in again"
+    note "Please try quitting iTerm and restarting it, or logging in and logging out"
 fi
 
 # note "Installing dotfiles..."

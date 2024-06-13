@@ -159,16 +159,22 @@ let g:ctrlp_working_path_mode = 'ca'
 " }}}
 " Gundo ----------------------------------------- {{{
 " "http://sjl.bitbucket.org/gundo.vim/"
-nnoremap <TAB> :GundoToggle<CR>
+" nnoremap <TAB> :GundoToggle<CR>
 " }}}
+" undotree ----------------------------------------- {{{
+nnoremap <F5> :UndotreeToggle<CR>
+" }}}
+"
+"
 " NERDTree -------------------------------------- {{{
 " Start if no file opened
 "autocmd vimenter * if !argc() | NERDTree | endif
 " Assign command to TAB
-"map <TAB> :NERDTreeToggle<CR>
+map <TAB> :NERDTreeToggle<CR>
 " Fix encoding issues surrounding arrows
 " "https://superuser.com/questions/387777/what-could-cause-strange-characters-in-vim"
 let g:NERDTreeDirArrows=0
+let g:NERDTreeShowHidden=1
 " }}}
 " RainbowParentheses ---------------------------- {{{
 " Auto enable rainbow parentheses
@@ -243,8 +249,8 @@ autocmd BufNewFile,BufRead *.tex :nnoremap <leader>vb o\begin{verbatim}<cr><cr>\
 
 " li - _L_ist _I_tem
 " NOTE: trailing whitespace is intentional
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>li o\item 
-autocmd BufNewFile,BufRead *.tex :inoremap <leader><leader> <esc>o\item 
+autocmd BufNewFile,BufRead *.tex :nnoremap <leader>li o\item
+autocmd BufNewFile,BufRead *.tex :inoremap <leader><leader> <esc>o\item
 
 " s - _S_ection
 autocmd BufNewFile,BufRead *.tex :nnoremap <leader>s o\section{}<esc>i
@@ -264,7 +270,7 @@ autocmd BufNewFile,BufRead *.tex :nnoremap <leader>it i\textit{<esc>Eli}<esc>
 autocmd BufNewFile,BufRead *.tex :inoremap ii \textit{
 " }}}
 " Markdown -------------------------------------- {{{
-autocmd BufNewFile,BufRead *.md :inoremap <leader><leader> <esc>o- 
+autocmd BufNewFile,BufRead *.md :inoremap <leader><leader> <esc>o-
 " }}}
 " Ruby --------------------- {{{
 " "https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport"

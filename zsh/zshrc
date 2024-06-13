@@ -80,7 +80,7 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git python aws  zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ohmyzsh-full-autoupdate)
-plugins=(git python aws zsh-autosuggestions  zsh-syntax-highlighting fast-syntax-highlighting ohmyzsh-full-autoupdate)
+plugins=(git python aws zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting ohmyzsh-full-autoupdate git-extras git-commit iterm2 aws 1password)
 
 
 source $ZSH/oh-my-zsh.sh
@@ -109,7 +109,56 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
+# typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+declare -a files_to_import=()
+
+files_to_import+=("$HOME"/.p10k.zshrc)
+files_to_import+=("$HOME"/.extra)
+
+# Aliases for for my usage
+alias ll="ls -l"
+alias lla="ls -al"
+
+
+# git aliases
+alias gb='git branch'
+alias gl='git log'
+alias gc='git checkout'
+alias gcm='git checkout mainline'
+alias gp='git pull --rebase'
+alias gs='git status'
+alias gdi='git diff'
+alias gd='git difftool'
+
+#generic
+alias v=vim
+
+
+
+export PATH="$PATH:$HOME/bin/"
+
+# don't save verification details
+alias sshno='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
+alias scpno='scp -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
+alias rsyncno='rsync -e"sshno"'
+
+
+#scm breeze
+files_to_import+=("$HOME/.dotfiles/libs/scm_breeze/scm_breeze.sh")
+
+
+# import fzf
+source <(fzf --zsh)
+
+# 1password variables
+export OP_BIOMETRIC_UNLOCK_ENABLED=true
+
+# load all files
+for file in ${files_to_import[@]}
+do
+    [[ ! -f $file ]] || source $file
+done

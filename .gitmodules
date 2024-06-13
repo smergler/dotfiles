@@ -122,9 +122,6 @@
 [submodule "vim/vim/bundle/vim-unimpaired"]
 	path = vim/vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
-[submodule "vim/vim/bundle/gundo.vim"]
-	path = vim/vim/bundle/gundo.vim
-	url = https://github.com/sjl/gundo.vim.git
 [submodule "vim/vim/bundle/vim-signature"]
 	path = vim/vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
@@ -137,3 +134,9 @@
 [submodule "vim/vim/bundle/rainbow_parentheses.vim"]
 	path = vim/vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim
+[submodule "vim/vim/bundle/undotree"]
+	path = vim/vim/bundle/undotree
+	url = https://github.com/mbbill/undotree.git
+[submodule "libs/scm_breeze"]
+	path = libs/scm_breeze
+	url = https://github.com/scmbreeze/scm_breeze.git

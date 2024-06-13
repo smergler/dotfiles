@@ -76,7 +76,9 @@ if [ -e $basedir ]; then
     cd $basedir
     if [ -e .git ]; then
         note "Updating dotfiles from git..."
-        # git pull --rebase origin master
+        git pull --rebase origin master
+        note "Installing Submodules"
+        git submodule update --init --recursive
     else
         unpack_tarball
     fi
@@ -87,16 +89,13 @@ else
         note "Cloning from git..."
         git clone $gitbase $basedir
         cd $basedir
-        git submodule init
-        git submodule update
+        note "Installing Submodules"
+        git submodule update --init --recursive
     else
         warn "Git not installed."
         unpack_tarball
     fi
 fi
-
-note "Install Submodules"
-git submodule update --init --recursive
 
 
 if [ -e ~/.oh-my-zsh ]; then
@@ -107,7 +106,7 @@ else
 fi
 
 note "Running dotbot install"
-$basedir/install
+$basedir/install --plugin-dir $basedir/libs/dotbot-brew
 
 
 ZSH_SHELL=$(which zsh)

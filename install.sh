@@ -109,6 +109,14 @@ fi
 note "Running dotbot install"
 $basedir/install
 
+
+ZSH_SHELL=$(which zsh)
+if [ $SHELL != $ZSH_SHELL ]; then
+    note "Will try switching to ZSH, may require password"
+    chsh -s $(which zsh)
+    note "Please try logging out and log back in again"
+fi
+
 # note "Installing dotfiles..."
 # for path in .* ; do
 #     case $path in

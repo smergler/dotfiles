@@ -23,3 +23,39 @@
     ~/bin: bin
     ~/.scmbrc: scm_breeze/scmbrc
     ~/.git.scmbrc: scm_breeze/git.scmbrc
+
+- if:
+    - cond: '[ `uname` = Darwin ]'
+      met:
+        - brew:
+            - awscli
+            - fzf
+            - jq
+            - maven
+            - node
+            - openssh
+            - readline
+            - tmux
+            - tree
+            - vim
+            - wget
+            - yt-dlp
+            - zsh
+            - zsh-completions
+        - cask:
+            - 1password
+            - 1password-cli
+            - alfred
+            - caffeine
+            - dbeaver-community
+            - notunes
+            - vlc
+            - zoom
+        - if:
+            # Certain applications are installed in other ways on work machines
+            # run `export WORK_LAPTOP=1` if this is a work machine
+            - cond: '[ ! -n "${WORK_LAPTOP+1}" ]'
+              met:
+                - cask:
+                    - visual-studio-code
+                    - slack

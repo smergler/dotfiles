@@ -117,46 +117,6 @@ if [ $SHELL != $ZSH_SHELL ]; then
     note "Please try quitting iTerm and restarting it, or logging in and logging out"
 fi
 
-# note "Installing dotfiles..."
-# for path in .* ; do
-#     case $path in
-#         .|..|.git)
-#             continue
-#             ;;
-#         *)
-#             link $basedir/$path $HOME/$path
-#             ;;
-#     esac
-# done
-
-# note "Installing bin/ directory..."
-# mkdir -v -p $bindir
-# for path in bin/* ; do
-#     relpath=$( basename $path )
-#     link $basedir/$path $bindir/$relpath
-# done
-
-# note "Symlinking Vim configurations..."
-# for rc in vim gvim; do
-#     link $basedir/vim/${rc}rc $HOME/.${rc}rc
-#     if [ ! -e $HOME/.${rc}local ]; then
-#         touch $HOME/.${rc}local
-#     fi
-# done
-
-# link $basedir/vim/editorconfig $HOME/.editorconfig
-
-
-# note "Initializing tools..."
-# #if has git; then
-#     # Post-install scripts might customize this further.
-#     # cp -v $basedir/.gitconfig.base $HOME/.gitconfig
-# #fi
-# #if has vim; then
-# #  cd $basedir
-# #  ./.vim/update.sh all
-# #fi
-
 # note "Running Scripts"
 # for script in scripts/*; do
 #     if [ -f $script ]; then
@@ -164,13 +124,4 @@ fi
 #         sh $script
 #     fi
 # done
-
-
-# note "Running post-install script, if any..."
-# postinstall=$HOME/.postinstall
-# if [ -e $postinstall ]; then
-#     # A post-install script can the use functions defined above.
-#     . $postinstall
-# fi
-
-# note "Done."
+note "Done."

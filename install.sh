@@ -106,7 +106,7 @@ else
 fi
 
 note "Running dotbot install"
-$basedir/install --plugin-dir $basedir/libs/dotbot-brew
+$basedir/install --plugin-dir $basedir/libs/dotbot-brew --plugin-dir $basedir/libs/dotbot-if
 
 
 ZSH_SHELL=$(which zsh)

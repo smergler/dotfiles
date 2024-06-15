@@ -29,13 +29,18 @@
       met:
         - brew:
             - awscli
+            - coreutils
+            - ctags
             - fzf
+            - gcc
+            - git
             - jq
             - maven
             - node
             - openssh
             - readline
             - tmux
+            - tree
             - tree
             - vim
             - wget
@@ -49,6 +54,7 @@
             - caffeine
             - dbeaver-community
             - notunes
+            - signal
             - vlc
             - zoom
         - if:

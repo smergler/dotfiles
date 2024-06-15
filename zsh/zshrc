@@ -34,7 +34,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Uncomment one of the following lines to change the auto-update behavior
 # zstyle ':omz:update' mode disabled  # disable automatic updates
-# zstyle ':omz:update' mode auto      # update automatically without asking
+zstyle ':omz:update' mode auto      # update automatically without asking
 # zstyle ':omz:update' mode reminder  # just remind me to update when it's time
 
 # Uncomment the following line to change how often to auto-update (in days).
@@ -80,7 +80,7 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git python aws  zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ohmyzsh-full-autoupdate)
-plugins=(git python aws zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting ohmyzsh-full-autoupdate git-extras git-commit iterm2 aws 1password)
+plugins=(git aws zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting ohmyzsh-full-autoupdate iterm2 aws 1password)
 
 
 source $ZSH/oh-my-zsh.sh

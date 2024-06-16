@@ -20,39 +20,12 @@
 [submodule "vim/vim/bundle/vim-pathogen"]
 	path = vim/vim/bundle/vim-pathogen
 	url = https://github.com/tpope/vim-pathogen.git
-[submodule "vim/vim/bundle/powerline-fonts"]
-	path = vim/vim/bundle/powerline-fonts
-	url = https://github.com/Lokaltog/powerline-fonts.git
-[submodule "vim/vim/bundle/php.vim"]
-	path = vim/vim/bundle/php.vim
-	url = https://github.com/StanAngeloff/php.vim.git
-[submodule "vim/vim/bundle/dotbot"]
-	path = vim/vim/bundle/dotbot
-	url = https://github.com/csivanich/dotbot.git
 [submodule "vim/vim/bundle/colorizer"]
 	path = vim/vim/bundle/colorizer
 	url = https://github.com/lilydjwg/colorizer.git
-[submodule "vim/vim/bundle/vim-latex"]
-	path = vim/vim/bundle/vim-latex
-	url = https://github.com/lervag/vim-latex.git
 [submodule "vim/vim/bundle/zsh-syntax-highlighting"]
 	path = vim/vim/bundle/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting
-[submodule "vim/vim/bundle/z"]
-	path = vim/vim/bundle/z
-	url = https://github.com/rupa/z.git
-[submodule "vim/vim/bundle/dux"]
-	path = vim/vim/bundle/dux
-	url = https://github.com/csivanich/dux
-[submodule "vim/vim/bundle/glacier-cli"]
-	path = vim/vim/bundle/glacier-cli
-	url = https://github.com/csivanich/glacier-cli.git
-[submodule "vim/vim/bundle/cleanroom"]
-	path = vim/vim/bundle/cleanroom
-	url = https://github.com/csivanich/cleanroom
-[submodule "vim/vim/bundle/vim-elixir"]
-	path = vim/vim/bundle/vim-elixir
-	url = https://github.com/elixir-lang/vim-elixir.git
 [submodule "vim/vim/bundle/dracula"]
 	path = vim/vim/bundle/dracula
 	url = https://github.com/dracula/vim.git
@@ -86,57 +59,27 @@
 [submodule "vim/vim/bundle/taglist.vim"]
 	path = vim/vim/bundle/taglist.vim
 	url = https://github.com/vim-scripts/taglist.vim.git
-[submodule "vim/vim/bundle/vim-markdown"]
-	path = vim/vim/bundle/vim-markdown
-	url = https://github.com/tpope/vim-markdown.git
 [submodule "vim/vim/bundle/vim-l9"]
 	path = vim/vim/bundle/vim-l9
 	url = https://github.com/eparreno/vim-l9.git
-[submodule "vim/vim/bundle/cup.vim"]
-	path = vim/vim/bundle/cup.vim
-	url = https://github.com/vim-scripts/cup.vim.git
 [submodule "vim/vim/bundle/molokai"]
 	path = vim/vim/bundle/molokai
 	url = https://github.com/tomasr/molokai.git
-[submodule "vim/vim/bundle/rust.vim"]
-	path = vim/vim/bundle/rust.vim
-	url = https://github.com/wting/rust.vim
-[submodule "vim/vim/bundle/vim-autocomplpop"]
-	path = vim/vim/bundle/vim-autocomplpop
-	url = https://github.com/othree/vim-autocomplpop.git
 [submodule "vim/vim/bundle/vim-autoclose"]
 	path = vim/vim/bundle/vim-autoclose
 	url = https://github.com/Townk/vim-autoclose.git
 [submodule "vim/vim/bundle/vim-auto-save"]
 	path = vim/vim/bundle/vim-auto-save
 	url = https://github.com/vim-scripts/vim-auto-save.git
-[submodule "vim/vim/bundle/emmet-vim"]
-	path = vim/vim/bundle/emmet-vim
-	url = https://github.com/mattn/emmet-vim.git
-[submodule "vim/vim/bundle/vim-ansible-yaml"]
-	path = vim/vim/bundle/vim-ansible-yaml
-	url = https://github.com/chase/vim-ansible-yaml.git
-[submodule "vim/vim/bundle/vim-ruby"]
-	path = vim/vim/bundle/vim-ruby
-	url = https://github.com/vim-ruby/vim-ruby.git
 [submodule "vim/vim/bundle/vim-unimpaired"]
 	path = vim/vim/bundle/vim-unimpaired
 	url = https://github.com/tpope/vim-unimpaired.git
 [submodule "vim/vim/bundle/vim-signature"]
 	path = vim/vim/bundle/vim-signature
 	url = https://github.com/kshenoy/vim-signature.git
-[submodule "vim/vim/bundle/Vim-Jinja2-Syntax"]
-	path = vim/vim/bundle/Vim-Jinja2-Syntax
-	url = https://github.com/Glench/Vim-Jinja2-Syntax.git
-[submodule "vim/vim/bundle/vim-terraform"]
-	path = vim/vim/bundle/vim-terraform
-	url = https://github.com/hashivim/vim-terraform
 [submodule "vim/vim/bundle/rainbow_parentheses.vim"]
 	path = vim/vim/bundle/rainbow_parentheses.vim
 	url = https://github.com/kien/rainbow_parentheses.vim
-[submodule "vim/vim/bundle/undotree"]
-	path = vim/vim/bundle/undotree
-	url = https://github.com/mbbill/undotree.git
 [submodule "libs/scm_breeze"]
 	path = libs/scm_breeze
 	url = https://github.com/scmbreeze/scm_breeze.git

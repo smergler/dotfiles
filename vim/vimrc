@@ -157,15 +157,12 @@ set laststatus=2
 " Ctrlp ----------------------------------------- {{{
 let g:ctrlp_working_path_mode = 'ca'
 " }}}
-" Gundo ----------------------------------------- {{{
-" "http://sjl.bitbucket.org/gundo.vim/"
-" nnoremap <TAB> :GundoToggle<CR>
-" }}}
 " undotree ----------------------------------------- {{{
 nnoremap <F5> :UndotreeToggle<CR>
 " }}}
-"
-"
+" EditorConfig -------------------------------------- {{{
+packadd! editorconfig
+" }}}
 " NERDTree -------------------------------------- {{{
 " Start if no file opened
 "autocmd vimenter * if !argc() | NERDTree | endif
@@ -221,68 +218,5 @@ let g:auto_save_in_insert_mode = 0
 " }}}
 " }}}
 
-" Languages ------------------------------------- {{{
-" Java Cup -------------------------------------- {{{
-autocmd BufNewFile,BufRead *.cup setf cup
-" }}}
-" Jinja ----------------------------------------- {{{
-autocmd BufRead,BufNewFile *.j2 :set filetype=jinja
-" }}}
-" JFLex ----------------------------------------- {{{
-augroup filetype
-    au BufRead,BufNewFile *.flex,*.jflex,*.jlex    set filetype=jflex
-augroup END
-    au Syntax jflex    so ~/.vim/syntax/jflex.vimrc
-" }}}
-" LaTeX ----------------------------------------- {{{
-autocmd BufNewFile,BufRead *.tex :set filetype=tex
-autocmd BufNewFile,BufRead *.tex :set spell
 
-" il - _I_tem _L_ist
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>il o\begin{itemize}<cr>\item <cr>\end{itemize}<esc>kA
 
-" el - _E_numerated _L_ist
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>el o\begin{enumerate}<cr>\item <cr>\end{enumerate}<esc>kA
-
-" vb - _V_er_B_atim
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>vb o\begin{verbatim}<cr><cr>\end{verbatim}<esc>kA
-
-" li - _L_ist _I_tem
-" NOTE: trailing whitespace is intentional
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>li o\item
-autocmd BufNewFile,BufRead *.tex :inoremap <leader><leader> <esc>o\item
-
-" s - _S_ection
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>s o\section{}<esc>i
-
-" ss - _S_ub _S_ection
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>ss o\subsection{}<esc>i
-
-" sss - _S_ub _S_ub _S_ection
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>sss o\subsubsection{}<esc>i
-
-" bf - _B_old _F_ont (Normal and Insert mode)
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>bf i\textbf{<esc>Eli}<esc>
-autocmd BufNewFile,BufRead *.tex :inoremap bf \textbf{
-
-" it - _I_talicize _F_ont (Normal and Insert mode)
-autocmd BufNewFile,BufRead *.tex :nnoremap <leader>it i\textit{<esc>Eli}<esc>
-autocmd BufNewFile,BufRead *.tex :inoremap ii \textit{
-" }}}
-" Markdown -------------------------------------- {{{
-autocmd BufNewFile,BufRead *.md :inoremap <leader><leader> <esc>o-
-" }}}
-" Ruby --------------------- {{{
-" "https://github.com/vim-ruby/vim-ruby/wiki/VimRubySupport"
-autocmd FileType ruby compiler ruby
-au FileType ruby setl sw=2 ts=2 sts=2 et
-" }}}
-" Terraform ------------------------------------- {{{
-" "https://github.com/bsnape/terraform-style-guide"
-au FileType tf setl sw=2 ts=2 sts=2 et
-" }}}
-" YAML ------------------------------------------ {{{
-" Set YAML to correct indentation
-au FileType yaml setl sw=2 ts=2 sts=2 et
-" }}}
-" }}}

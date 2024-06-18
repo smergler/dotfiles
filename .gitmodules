@@ -1,7 +1,3 @@
-[submodule "dotbot"]
-	path = dotbot
-	url = https://github.com/anishathalye/dotbot
-	ignore = dirty
 [submodule "zsh/themes/powerlevel10k"]
 	path = zsh/themes/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
@@ -89,3 +85,15 @@
 [submodule "libs/dotbot-brew"]
 	path = libs/dotbot-brew
 	url = https://github.com/d12frosted/dotbot-brew.git
+[submodule "libs/dotbot"]
+	path = dotbot
+	url = https://github.com/anishathalye/dotbot
+[submodule "libs/homebrew-install"]
+	path = libs/homebrew-install
+	url = https://github.com/Homebrew/install.git
+[submodule "dotbot-yum"]
+	path = libs/dotbot-yum
+	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
+[submodule "libs/fzf"]
+	path = libs/fzf
+	url = https://github.com/junegunn/fzf.git

@@ -1,7 +1,7 @@
 - defaults:
     link:
-      relink: true
-      force: true
+        relink: true
+        force: true
 
 - clean:
     '~/':
@@ -27,6 +27,11 @@
 - if:
     - cond: '[ `uname` = Darwin ]'
       met:
+        - shell:
+            - [cp fonts/MesloLGS\ NF\ Bold\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Bold\ Italic.ttf, copying MesloLGS NF Bold Italic.ttf]
+            - [cp fonts/MesloLGS\ NF\ Bold.ttf /Library/Fonts/MesloLGS\ NF\ Bold.ttf, copying MesloLGS NF Bold.ttf]
+            - [cp fonts/MesloLGS\ NF\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Italic.ttf, copying MesloLGS NF Italic.ttf]
+            - [cp fonts/MesloLGS\ NF\ Regular.ttf /Library/Fonts/MesloLGS\ NF\ Regular.ttf, copying MesloLGS NF Regular.ttf]
         - brew:
             - awscli
             - coreutils
@@ -65,3 +70,6 @@
                 - cask:
                     - visual-studio-code
                     - slack
+        - link:
+            ~/Library/Application Support/Code/User/keybindings.json: scripts/vs_configs/keybindings.json
+            ~/Library/Application Support/Code/User/settings.json: scripts/vs_configs/settings.json

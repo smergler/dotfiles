@@ -1,47 +1,55 @@
 {
-    "terminal.external.osxExec": "iTerm.app",
-    "editor.renderControlCharacters": true,
-    "editor.renderWhitespace": "all",
-    "editor.minimap.enabled": false,
-    "workbench.editor.enablePreviewFromQuickOpen": false,
-    "git.autofetch": true,
-    "workbench.editor.enablePreview": false,
-    "files.autoSave": "onFocusChange",
-    "editor.acceptSuggestionOnCommitCharacter": false,
-    "go.formatTool": "gofmt",
-    "go.lintOnSave": "file",
-    "[go]": {
-        "editor.formatOnSave": true
-    },
-    "files.trimTrailingWhitespace": true,
-    "vim.foldfix": true,
-    "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
-    },
-    "vim.normalModeKeyBindingsNonRecursive": [
-    {
-        "before": ["<leader>", "w"],
-        "commands": ["workbench.action.moveEditorLeftInGroup"]
-    }
-    ],
-    "phpcs.enable": false,
-    "window.autoDetectColorScheme": true,
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "[typescript]": {
+  "[go]": {
+    "editor.formatOnSave": true
+  },
+  "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "editor.formatOnSaveMode": "modifications",
-    "workbench.editorAssociations": {
+  },
+  "customizeUI.titleBar": "inline",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.accessibilitySupport": "off",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "editor.formatOnSaveMode": "modifications",
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "git.autofetch": true,
+  "go.formatTool": "gofmt",
+  "go.lintOnSave": "file",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "phpcs.enable": false,
+  "redhat.telemetry.enabled": true,
+  "terminal.explorerKind": "external",
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.altClickMovesCursor": false,
+  "terminal.integrated.fontFamily": "MesloLGS NF",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vim.foldfix": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.moveEditorLeftInGroup"
+      ]
+    }
+  ],
+  "window.autoDetectColorScheme": true,
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 1,
+  "workbench.colorCustomizations": {
+    "activityBar.background": "#252526",
+    "statusBar.background": "#252526"
+  },
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
-    },
-    "window.titleBarStyle": "native",
-    "customizeUI.titleBar": "inline",
-    "workbench.colorCustomizations": {
-        "activityBar.background": "#252526",
-        "statusBar.background": "#252526"
-    },
-    "redhat.telemetry.enabled": true,
-    "terminal.integrated.altClickMovesCursor": false,
-    "window.zoomLevel": 1
+  }
 }

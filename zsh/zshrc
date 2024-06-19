@@ -1,3 +1,5 @@
+if [ -f ~/.zsh.init.extra ]; then source ~/.zsh.init.extra; fi
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -142,3 +144,5 @@ done
 ZSH=$ENV_ZSH
 ZSH_CUSTOM=$ENV_ZSH_CUSTOM
 ZSH_THEME=$ENV_ZSH_THEME
+
+if [ -f ~/.zsh.post.extra ]; then source ~/.zsh.post.extra; fi

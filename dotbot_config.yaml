@@ -24,6 +24,43 @@
     ~/.scmbrc: scm_breeze/scmbrc
     ~/.git.scmbrc: scm_breeze/git.scmbrc
 
+# install homebrew
+- if:
+    - cond: '! which brew &> /dev/null '
+      met:
+        - if:
+            - cond: '[[ `uname` = Linux ]]'
+              met:
+                - defaults:
+                    yum:
+                        sudo: True
+                - yum:
+                    Development Tools:
+                        group: True
+                - yum: [procps-ng, curl, file, git]
+                - shell:
+                    - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
+
+- brew:
+    - awscli
+    - coreutils
+    - ctags
+    - fzf
+    - gcc
+    - git
+    - jq
+    - maven
+    - node
+    - openssh
+    - readline
+    - tmux
+    - tree
+    - tre
+    - vim
+    - wget
+    - zsh
+    - zsh-completions
+
 - if:
     - cond: '[ `uname` = Darwin ]'
       met:
@@ -32,26 +69,6 @@
             - [cp fonts/MesloLGS\ NF\ Bold.ttf /Library/Fonts/MesloLGS\ NF\ Bold.ttf, copying MesloLGS NF Bold.ttf]
             - [cp fonts/MesloLGS\ NF\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Italic.ttf, copying MesloLGS NF Italic.ttf]
             - [cp fonts/MesloLGS\ NF\ Regular.ttf /Library/Fonts/MesloLGS\ NF\ Regular.ttf, copying MesloLGS NF Regular.ttf]
-        - brew:
-            - awscli
-            - coreutils
-            - ctags
-            - fzf
-            - gcc
-            - git
-            - jq
-            - maven
-            - node
-            - openssh
-            - readline
-            - tmux
-            - tree
-            - tree
-            - vim
-            - wget
-            - yt-dlp
-            - zsh
-            - zsh-completions
         - cask:
             - 1password
             - 1password-cli
@@ -64,9 +81,12 @@
             - zoom
         - if:
             # Certain applications are installed in other ways on work machines
+            # Or is for personal machines
             # run `export WORK_LAPTOP=1` if this is a work machine
             - cond: '[ ! -n "${WORK_LAPTOP+1}" ]'
               met:
+                - brew:
+                    - yt-dlp
                 - cask:
                     - visual-studio-code
                     - slack

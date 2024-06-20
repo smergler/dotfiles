@@ -97,3 +97,6 @@
 [submodule "libs/fzf"]
 	path = libs/fzf
 	url = https://github.com/junegunn/fzf.git
+[submodule "libs/dotbot-yum"]
+	path = libs/dotbot-yum
+	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git

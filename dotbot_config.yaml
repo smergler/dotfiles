@@ -26,10 +26,10 @@
 
 # install homebrew
 - if:
-    - cond: '! which brew &> /dev/null '
+    - cond: '! which brew &> /dev/null'
       met:
         - if:
-            - cond: '[[ `uname` = Linux ]]'
+            - cond: 'which yum &> /dev/null '
               met:
                 - if:
                     - cond: '! which yum &> /dev/null'

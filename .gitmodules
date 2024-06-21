@@ -100,3 +100,6 @@
 [submodule "libs/dotbot-yum"]
 	path = libs/dotbot-yum
 	url = https://gitlab.com/flyingchipmunk/dotbot-yum.git
+[submodule "libs/dotbot-apt"]
+	path = libs/dotbot-apt
+	url = git@github.com:bryant1410/dotbot-apt.git

@@ -106,18 +106,22 @@ else
 fi
 
 note "Running dotbot install"
-$basedir/dotbot_install --plugin-dir $basedir/libs/dotbot-brew --plugin-dir $basedir/libs/dotbot-if --plugin-dir $basedir/libs/dotbot-yum -c dotbot_config.yaml
+$basedir/dotbot_install \
+    --plugin-dir $basedir/libs/dotbot-if \
+    --plugin-dir $basedir/libs/dotbot-multi-install \
+    --plugin-dir $basedir/libs/dotbot-yum \
+    -c dotbot_config.yaml
 
-note "Running linking for Java"
-sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
+#note "Running linking for Java"
+#sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
 
-ZSH_SHELL=$(which zsh)
-if [ $SHELL != $ZSH_SHELL ]; then
-    note "Will try switching to ZSH, may require password"
-    sudo sh -c "echo $(which zsh) >> /etc/shells"
-    chsh -s $(which zsh)
-    note "Please try quitting iTerm and restarting it, or logging in and logging out"
-fi
+#ZSH_SHELL=$(which zsh)
+#if [ $SHELL != $ZSH_SHELL ]; then
+#    note "Will try switching to ZSH, may require password"
+#    sudo sh -c "echo $(which zsh) >> /etc/shells"
+#    chsh -s $(which zsh)
+#    note "Please try quitting iTerm and restarting it, or logging in and logging out"
+#fi
 
 # note "Running Scripts"
 # for script in scripts/*; do

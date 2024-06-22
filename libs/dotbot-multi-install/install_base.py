@@ -24,9 +24,9 @@ class InstallBase(dotbot.Plugin):
         self._bootstrap()
         success = self._process_call(data)
         if success:
-            self._log.info('All packages have been installed')
+            self._log.info('All %s packages have been installed' % self._directive)
         else:
-            self._log.error('Some packages were not installed')
+            self._log.error('Some %s packages were not installed' % self._directive)
 
         return success
 

@@ -31,20 +31,27 @@
         - if:
             - cond: '[[ `uname` = Linux ]]'
               met:
-                - defaults:
-                    yum:
-                        sudo: True
-                - yum:
-                    Development Tools:
-                        group: True
-                - yum: [procps-ng, curl, file, git]
+                - if:
+                    - cond: '! which yum &> /dev/null'
+                      met:
+                        - defaults:
+                            yum:
+                                sudo: True
+                        - yum:
+                            Development Tools:
+                                group: True
+                        - yum: [procps-ng, curl, file, git]
+                    - cond: '! which apt &> /dev/null '
+                      met:
+                        - defaults:
+                            apt:
+                                sudo: True
+                        - apt: [build-essential procps curl file git]
                 - shell:
                     - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
 
+- brew: [awscli coreutils ctags]
 - brew:
-    - awscli
-    - coreutils
-    - ctags
     - fzf
     - gcc
     - git

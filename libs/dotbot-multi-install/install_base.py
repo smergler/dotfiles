@@ -103,7 +103,6 @@ class InstallBase(dotbot.Plugin):
         return True
 
     def _run_cmd(self, cmd, pkg_opts={}):
-        # self._log.info("running %s" % cmd )
         with open(os.devnull, 'w') as devnull:
             stdin = stdout = stderr = devnull
             if pkg_opts.get('stdin', False) == True:

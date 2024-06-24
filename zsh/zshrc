@@ -121,7 +121,14 @@ typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 export PATH="$PATH:$HOME/bin/:/home/linuxbrew/.linuxbrew/bin/"
 
 # import fzf
-source <(fzf --zsh)
+# fzf can only be use `--zsh`` on version .48 and above
+fzfver=$( fzf --version |awk '{print $1}')
+requiredfzfver="0.48.0"
+if [ "$(printf '%s\n' "$requiredfzfver" "$fzfver" | sort -V | head -n1)" = "$requiredfzfver" ]; then
+    source <(fzf --zsh)
+ else
+     for file in $(dpkg -L fzf |grep zsh); do source $file; done
+ fi
 
 # 1password variables
 export OP_BIOMETRIC_UNLOCK_ENABLED=true

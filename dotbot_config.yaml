@@ -25,48 +25,69 @@
     ~/.git.scmbrc: scm_breeze/git.scmbrc
 
 # install homebrew
+# homebrew doesn't support arm chips currently
 - if:
-    - cond: '! which brew &> /dev/null'
+    - cond: '! which brew &> /dev/null && [[ $(uname -m) != *"aarch"* ]]'
       met:
         - if:
-            - cond: 'which yum &> /dev/null '
-              met:
-                - if:
-                    - cond: '! which yum &> /dev/null'
-                      met:
-                        - defaults:
-                            yum:
-                                sudo: True
-                        - yum:
-                            Development Tools:
-                                group: True
-                        - yum: [procps-ng, curl, file, git]
-                    - cond: '! which apt &> /dev/null '
-                      met:
-                        - defaults:
-                            apt:
-                                sudo: True
-                        - apt: [build-essential procps curl file git]
-                - shell:
-                    - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
+          - cond: 'which yum &> /dev/null'
+            met:
+              - yum:
+                  Development Tools:
+                      group: True
+              - yum: [procps-ng, curl, file, git]
+          - cond: 'which apt &> /dev/null'
+            met:
+              - defaults:
+                  apt:
+                    sudo: True
+              - apt: [build-essential procps curl file git]
+              # homebrew on linux needs to have extra details
+        - shell:
+          - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
 
-- brew: [awscli coreutils ctags]
-- brew:
-    - fzf
-    - gcc
-    - git
-    - jq
-    - maven
-    - node
-    - openssh
-    - readline
-    - tmux
-    - tree
-    - tre
-    - vim
-    - wget
-    - zsh
-    - zsh-completions
+- if:
+  - cond: 'which brew &> /dev/null'
+    met:
+      - brew:
+        - awscli
+        - coreutils
+        - ctags
+        - fzf
+        - gcc
+        - git
+        - jq
+        - maven
+        - node
+        - openssh
+        - readline
+        - tmux
+        - tree
+        - tre
+        - vim
+        - wget
+        - zsh
+        - zsh-completions
+    unmet:
+      - defaults:
+          apt:
+            sudo: True
+      - apt:
+        - awscli
+        - coreutils
+        - universal-ctags
+        - fzf
+        - gcc
+        - git
+        - jq
+        - maven
+        - nodejs
+        - openssh-client
+        - tmux
+        - tree
+        - vim
+        - wget
+        - zsh
 
 - if:
     - cond: '[ `uname` = Darwin ]'

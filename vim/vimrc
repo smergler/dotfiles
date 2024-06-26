@@ -4,6 +4,7 @@ if filereadable("/etc/vimrc")
 endif
 
 " Vimscript file settings ---------------------- {{{
+let b:did_ftplugin = 1
 augroup filetype_vim
     autocmd!
     autocmd FileType vim setlocal foldmethod=marker
@@ -38,7 +39,6 @@ set autoindent
 set background=dark
 set backspace=2
 set colorcolumn=+1        " highlight column after 'textwidth'
-set expandtab
 set hlsearch
 set ignorecase
 set incsearch
@@ -49,12 +49,9 @@ set number
 set nocompatible
 set relativenumber
 set ruler
-set shiftwidth=4
 set showcmd
 set showmatch
 set smartcase
-set smarttab
-set tabstop=4
 
 " Trailing whitespace highlighting -------------- {{{
 " "http://vim.wikia.com/wiki/Highlight_unwanted_spaces"
@@ -121,7 +118,7 @@ nnoremap <leader>h <<
 nnoremap <leader>p yyp
 
 " c - _C_lear the current search
-nnoremap <leader>cl :noh<cr>
+ noremap <leader>cl :noh<cr>
 
 " sp - _SP_elling fix with first result
 nnoremap <leader>sp z=1<cr><cr>

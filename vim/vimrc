@@ -100,7 +100,7 @@ vmap <Down> ]egv
 " Set up crosshair, toggle with <leader>c in normal mode
 :hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
 :hi CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=white guibg=darkgrey guifg=white
-:nnoremap <Leader>c :set cursorline! cursorcolumn!<CR>
+:nnoremap <leader>c :set cursorline! cursorcolumn!<CR>
 " }}}
 " Git ------------------------------------------- {{{
 " gst - Open Git status
@@ -127,7 +127,7 @@ nnoremap <leader>sp z=1<cr><cr>
 nnoremap <leader><space> za
 " }}}
 " Taglist Toggle -------------------------------- {{{
-:nnoremap <Leader>t :Tlist<CR>
+:nnoremap <leader>t :Tlist<CR>
 " }}}
 " Vimrc ----------------------------------------- {{{
 " ev - _E_dit _V_im config
@@ -140,7 +140,10 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 
 " Trim on Save ----------------------------------- {{{
 " trim spaces at EOL
-autocmd BufWritePre * :%s/\s\+$//e
+augroup trimWhitespace
+    autocmd!
+    autocmd BufWritePre * :%s/\s\+$//e
+augroup END
 " }}}
 " }}}
 

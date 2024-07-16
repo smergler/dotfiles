@@ -2,7 +2,6 @@
     link:
         relink: true
         force: true
-
 - clean:
     '~/':
         force: true
@@ -34,7 +33,17 @@
             met:
               - yum:
                   Development Tools:
-                      group: True
+                    group: True
+                    sudo: True
+                    options: "-q -y"
+                    stdout: False
+                    stderr: False
+              - defaults:
+                  yum:
+                    sudo: True
+                    options: "-q -y"
+                    stdout: False
+                    stderr: False
               - yum: [procps-ng, curl, file, git]
           - cond: 'which apt &> /dev/null'
             met:
@@ -45,6 +54,7 @@
               # homebrew on linux needs to have extra details
         - shell:
           - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
+          - [ source ~/.zshrc ]
 
 - if:
   - cond: 'which brew &> /dev/null'

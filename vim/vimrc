@@ -145,6 +145,13 @@ augroup trimWhitespace
     autocmd BufWritePre * :%s/\s\+$//e
 augroup END
 " }}}
+
+" Folding ----------------------------------- {{{
+" Why not use the space or return keys to toggle folds?
+nnoremap <space> za
+nnoremap <CR> za
+vnoremap <space> zf
+" }}}
 " }}}
 
 " Plugins --------------------------------------- {{{
@@ -218,5 +225,19 @@ let g:auto_save_in_insert_mode = 0
 " }}}
 " }}}
 
+" Helpful changes/Hacks --------------------------------------- {{{
+" Prevent loading more stuff  --------------------------------------- {{{
+" having Ex mode start or showing me the command history
+" is a complete pain in the ass if i mistype
+nnoremap Q <silent>
+nnoremap q: <silent>
+nnoremap K <silent>
+" }}}
 
-
+" Change folding methods/* {{{ */
+augroup vimrc
+  au BufReadPre * setlocal foldmethod=indent
+  au BufWinEnter * if &fdm == 'indent' | setlocal foldmethod=manual | endif
+augroup END
+" }}}
+" }}}

@@ -67,7 +67,6 @@
         - gcc
         - git
         - jq
-        - maven
         - node
         - openssh
         - readline

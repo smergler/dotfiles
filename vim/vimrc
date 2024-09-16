@@ -1,3 +1,7 @@
+"if filereadable(expand("~/.vimrc.init.extra"))
+""    source ~/.vimrc.init.extra
+"endif
+
 " Include default global config
 if filereadable("/etc/vimrc")
     source /etc/vimrc

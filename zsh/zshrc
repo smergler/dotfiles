@@ -1,3 +1,5 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 if [ -f ~/.zsh.init.extra ]; then source ~/.zsh.init.extra; fi
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
@@ -153,3 +155,6 @@ ZSH_CUSTOM=$ENV_ZSH_CUSTOM
 ZSH_THEME=$ENV_ZSH_THEME
 
 if [ -f ~/.zsh.post.extra ]; then source ~/.zsh.post.extra; fi
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

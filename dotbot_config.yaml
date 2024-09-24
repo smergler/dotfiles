@@ -121,8 +121,8 @@
                         - visual-studio-code
                         - slack
             - link:
-                ~/Library/Application Support/Code/User/keybindings.json: config/vs_code/keybindings.json
-                ~/Library/Application Support/Code/User/settings.json: config/vs_code/settings.json
+                "~/Library/Application Support/Code/User/keybindings.json": config/vs_code/keybindings.json
+                "~/Library/Application Support/Code/User/settings.json": config/vs_code/settings.json
     unmet:
       - defaults:
           apt:

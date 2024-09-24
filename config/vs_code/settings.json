@@ -51,5 +51,6 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editorAssociations": {
     "*.ipynb": "jupyter.notebook.ipynb"
-  }
+  },
+  "editor.formatOnSave": true
 }

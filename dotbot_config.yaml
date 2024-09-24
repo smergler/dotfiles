@@ -15,7 +15,7 @@
 - link:
     ~/bin: bin
     ~/.config/tmux: tmux
-    ~/.editorconfig: editorconfig
+    ~/.editorconfig: config/editor/editorconfig
     ~/.git.scmbrc: scm_breeze/git.scmbrc
     ~/.p10k.zshrc: zsh/p10k.zsh
     ~/.scmbrc: scm_breeze/scmbrc
@@ -26,36 +26,48 @@
 # install homebrew
 # homebrew doesn't support arm chips currently
 - if:
-    - cond: '! which brew &> /dev/null && [[ $(uname -m) != *"aarch"* ]]'
+    - cond: '[[ $(uname -m) != *"aarch"* ]]'
       met:
         - if:
-          - cond: 'which yum &> /dev/null'
+          - cond: '! which brew &> /dev/null'
             met:
-              - yum:
-                  Development Tools:
-                    group: True
-                    sudo: True
-                    options: "-q -y"
-                    stdout: False
-                    stderr: False
-              - defaults:
-                  yum:
-                    sudo: True
-                    options: "-q -y"
-                    stdout: False
-                    stderr: False
-              - yum: [procps-ng, curl, file, git]
-          - cond: 'which apt &> /dev/null'
-            met:
-              - defaults:
-                  apt:
-                    sudo: True
-              - apt: [build-essential procps curl file git]
-              # homebrew on linux needs to have extra details
-        - shell:
-          - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
-          - [ source ~/.zshrc ]
+              - if:
+                - cond: 'which yum &> /dev/null'
+                  met:
+                    - yum:
+                        Development Tools:
+                          group: True
+                          sudo: True
+                          options: "-q -y"
+                          stdout: False
+                          stderr: False
+                    - defaults:
+                        yum:
+                          sudo: True
+                          options: "-q -y"
+                          stdout: False
+                          stderr: False
+                    - yum: [procps-ng, curl, file, git]
+                - cond: 'which apt &> /dev/null'
+                  met:
+                    - defaults:
+                        apt:
+                          sudo: True
+                    - apt: [build-essential procps curl file git]
+                    # homebrew on linux needs to have extra details
+              - shell:
+                - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
+                - [ source ~/.zshrc ]
+            unmet:
+              - shell:
+                - [ brew update, Updating Homebrew ]
+                -
+                  command: brew outdated
+                  description: We will now update the following programs
+                  stdout: true
+                - [ brew upgrade, Updating....]
 
+# If we can install homebrew install a bunch of standard apps we use
 - if:
   - cond: 'which brew &> /dev/null'
     met:
@@ -77,6 +89,40 @@
         - wget
         - zsh
         - zsh-completions
+      # If this is a mac, install some creature comfort apps I use
+      - if:
+        - cond: '[ `uname` = Darwin ]'
+          met:
+            - shell:
+                - [cp fonts/MesloLGS\ NF\ Bold\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Bold\ Italic.ttf, copying MesloLGS NF Bold Italic.ttf]
+                - [cp fonts/MesloLGS\ NF\ Bold.ttf /Library/Fonts/MesloLGS\ NF\ Bold.ttf, copying MesloLGS NF Bold.ttf]
+                - [cp fonts/MesloLGS\ NF\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Italic.ttf, copying MesloLGS NF Italic.ttf]
+                - [cp fonts/MesloLGS\ NF\ Regular.ttf /Library/Fonts/MesloLGS\ NF\ Regular.ttf, copying MesloLGS NF Regular.ttf]
+            - cask:
+                - 1password
+                - 1password-cli
+                - alfred
+                - amazon-q
+                - caffeine
+                - dbeaver-community
+                - notunes
+                - signal
+                - vlc
+                - zoom
+            - if:
+                # Certain applications are installed in other ways on work machines
+                # Or is for personal machines
+                # run `export WORK_LAPTOP=1` if this is a work machine
+                - cond: '[ ! -n "${WORK_LAPTOP+1}" ]'
+                  met:
+                    - brew:
+                        - yt-dlp
+                    - cask:
+                        - visual-studio-code
+                        - slack
+            - link:
+                ~/Library/Application Support/Code/User/keybindings.json: config/vs_code/keybindings.json
+                ~/Library/Application Support/Code/User/settings.json: config/vs_code/settings.json
     unmet:
       - defaults:
           apt:
@@ -97,36 +143,3 @@
         - wget
         - zsh
 
-- if:
-    - cond: '[ `uname` = Darwin ]'
-      met:
-        - shell:
-            - [cp fonts/MesloLGS\ NF\ Bold\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Bold\ Italic.ttf, copying MesloLGS NF Bold Italic.ttf]
-            - [cp fonts/MesloLGS\ NF\ Bold.ttf /Library/Fonts/MesloLGS\ NF\ Bold.ttf, copying MesloLGS NF Bold.ttf]
-            - [cp fonts/MesloLGS\ NF\ Italic.ttf /Library/Fonts/MesloLGS\ NF\ Italic.ttf, copying MesloLGS NF Italic.ttf]
-            - [cp fonts/MesloLGS\ NF\ Regular.ttf /Library/Fonts/MesloLGS\ NF\ Regular.ttf, copying MesloLGS NF Regular.ttf]
-        - cask:
-            - 1password
-            - 1password-cli
-            - alfred
-            - amazon-q
-            - caffeine
-            - dbeaver-community
-            - notunes
-            - signal
-            - vlc
-            - zoom
-        - if:
-            # Certain applications are installed in other ways on work machines
-            # Or is for personal machines
-            # run `export WORK_LAPTOP=1` if this is a work machine
-            - cond: '[ ! -n "${WORK_LAPTOP+1}" ]'
-              met:
-                - brew:
-                    - yt-dlp
-                - cask:
-                    - visual-studio-code
-                    - slack
-        - link:
-            ~/Library/Application Support/Code/User/keybindings.json: scripts/vs_configs/keybindings.json
-            ~/Library/Application Support/Code/User/settings.json: scripts/vs_configs/settings.json

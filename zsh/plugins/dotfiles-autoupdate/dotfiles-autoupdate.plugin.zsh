@@ -10,7 +10,7 @@ do_updates() {
 }
 
 save_updates() {
-    echo "$check_update_label=1" > "${ZSH_CACHE_DIR}/.zsh-update"
+    echo "$check_update_label=1" >> "${ZSH_CACHE_DIR}/.zsh-update"
 }
 
 main() {

@@ -87,11 +87,11 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 plugins=(
     1password
     aws
-    dotfiles-autoupdate
     fast-syntax-highlighting
     git
     iterm2
     ohmyzsh-full-autoupdate
+    dotfiles-autoupdate # put this after for better experience
     zsh-syntax-highlighting
 )
 

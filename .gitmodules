@@ -103,3 +103,6 @@
 [submodule "libs/dotbot-if"]
 	path = libs/dotbot-if
 	url = https://github.com/smergler/dotbot-if.git
+[submodule "libs/dotbot-multi-install"]
+	path = libs/dotbot-multi-install
+	url = git@github.com:smergler/dotbot-multi-install.git

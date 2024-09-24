@@ -84,7 +84,16 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 # plugins=(git python aws  zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ohmyzsh-full-autoupdate)
-plugins=(git zsh-syntax-highlighting fast-syntax-highlighting ohmyzsh-full-autoupdate iterm2 aws 1password)
+plugins=(
+    1password
+    aws
+    dotfiles-autoupdate
+    fast-syntax-highlighting
+    git
+    iterm2
+    ohmyzsh-full-autoupdate
+    zsh-syntax-highlighting
+)
 
 
 source $ZSH/oh-my-zsh.sh

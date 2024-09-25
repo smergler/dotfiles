@@ -145,26 +145,18 @@ if [ "$(printf '%s\n' "$requiredfzfver" "$fzfver" | sort -V | head -n1)" = "$req
 # 1password variables
 export OP_BIOMETRIC_UNLOCK_ENABLED=true
 
-declare -a files_to_import=()
+safe_load "$HOME"/.p10k.zshrc
+safe_load "$HOME/.dotfiles/libs/scm_breeze/scm_breeze.sh"
+safe_load "$ZSH_CUSTOM"/includes/aliases
+safe_load "$HOME"/.extra
+safe_load "$HOME"/.zshrc.pre-oh-my-zsh
 
-files_to_import+=("$HOME"/.p10k.zshrc)
-files_to_import+=("$HOME/.dotfiles/libs/scm_breeze/scm_breeze.sh")
-files_to_import+=("$ZSH_CUSTOM"/includes/aliases)
-files_to_import+=("$HOME"/.extra)
-files_to_import+=("$HOME"/.zshrc.pre-oh-my-zsh)
-
-
-# load all files
-for file in ${files_to_import[@]}
-do
-    [[ ! -f $file ]] || source $file
-done
 
 ZSH=$ENV_ZSH
 ZSH_CUSTOM=$ENV_ZSH_CUSTOM
 ZSH_THEME=$ENV_ZSH_THEME
 
-if [ -f ~/.zsh.post.extra ]; then source ~/.zsh.post.extra; fi
+safe_load ~/.zsh.post.extra
 
 # Amazon Q post block. Keep at the bottom of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"

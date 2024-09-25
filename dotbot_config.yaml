@@ -21,6 +21,8 @@
     ~/.scmbrc: scm_breeze/scmbrc
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
+    ~/.zprofile: zsh/profile
+    ~/.zshenv: zsh/env
     ~/.zshrc: zsh/zshrc
 
 # install homebrew

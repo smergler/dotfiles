@@ -1,0 +1,12 @@
+# This is loaded universally for all types of shell
+# sessions (interactive or non-interactive, login
+# or non-login). It is the only configuration file
+# that gets loaded for non-interactive and non-login
+# scripts like cron jobs. However, macOS overrides
+# this for PATH settings for interactive shells.
+safe_load() {
+  file=$1
+  [[ ! -f $file ]] || source $file
+}
+
+safe_load ~/.zshenv.local

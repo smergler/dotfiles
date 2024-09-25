@@ -6,7 +6,9 @@
 # this for PATH settings for interactive shells.
 safe_load() {
   file=$1
-  [[ ! -f $file ]] || source $file
+  if [[ -f $file ]]; then
+      source $file
+  fi
 }
 
 safe_load ~/.zshenv.local

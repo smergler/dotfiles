@@ -1,0 +1,82 @@
+# seancam@: sensible gitignore file for Amazon dev on a Mac
+
+# OS generated files #
+######################
+.AppleDouble
+.LSOverride
+ehthumbs.db
+
+# Folder view configuration files
+Desktop.ini
+.DS_Store
+.DS_Store?
+
+# Files on external disks
+.Trashes
+.Spotlight-V100
+
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+Thumbs.db
+
+# Files that might appear in the root of a volume
+###################
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+
+# Directories potentially created on remote AFP share
+###################
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Project Debug
+###################
+log4j2.test.xml
+
+# Project and build files
+###################
+*.sublime-project
+*.sublime-workspace
+*.iml
+build
+generated
+.iml
+var
+.sonar
+sonar-project.properties
+.rakeTasks
+.idea/
+.python-version
+out/
+classes/
+*.pyc
+__pycache__
+runpy
+.coverage
+coverage.xml
+htmlcov/
+.bloop/
+DropletDefaultLimits.wiki
+.ruby-version
+node_modules
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so

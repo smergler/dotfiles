@@ -2,19 +2,14 @@
     link:
         relink: true
         force: true
+        create: true
 - clean:
-    '~/':
-        force: true
     '~/.config':
         recursive: true
-
-- shell:
-    - description:  initialize files
-      command: if [ ! -d ~/.config ]; then mkdir ~/.config; fi
-
 - link:
     ~/bin: bin
     ~/.config/tmux: tmux
+    ~/.config/git: git
     ~/.editorconfig: config/editor/editorconfig
     ~/.git.scmbrc: scm_breeze/git.scmbrc
     ~/.p10k.zshrc: zsh/p10k.zsh

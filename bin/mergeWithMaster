@@ -1,8 +1,0 @@
-#!/bin/bash
-git stash
-git checkout master
-git pull origin master
-git merge --no-ff $1
-git push origin master
-git checkout $1
-git stash pop

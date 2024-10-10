@@ -1,1 +1,0 @@
-mysqld_safe --skip_grant_tables &

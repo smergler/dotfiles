@@ -32,29 +32,6 @@ function die() {
     exit 1
 }
 
-function link() {
-    src=$1
-    dest=$2
-
-    if [ -e $dest ]; then
-        if [ -L $dest ]; then
-            # Already symlinked -- I'll assume correctly.
-            return
-        else
-            # Rename files with a ".old" extension.
-            warn "$dest file already exists, renaming to $dest.old"
-            backup=$dest.old
-            if [ -e $backup ]; then
-                die "$backup already exists. Aborting."
-            fi
-            mv -v $dest $backup
-        fi
-    fi
-
-    # Update existing or create new symlinks.
-    ln -vsf $src $dest
-}
-
 function unpack_tarball() {
     note "Downloading tarball..."
     mkdir -vp $basedir
@@ -97,6 +74,13 @@ else
     fi
 fi
 
+if [[ $(uname -m) != *"aarch"* ]]; then
+    if ! has brew; then
+        note "Installing homebrew, may ask for credentials"
+        /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh
+        eval "$(/opt/homebrew/bin/brew shellenv)"
+    fi
+fi
 
 if [ -e ~/.oh-my-zsh ]; then
     note "OhMyZSH is already installed"

@@ -82,9 +82,6 @@
 [submodule "libs/dotbot-if"]
 	path = libs/dotbot-if
 	url = https://github.com/wonderbeyond/dotbot-if.git
-[submodule "libs/dotbot-brew"]
-	path = libs/dotbot-brew
-	url = https://github.com/d12frosted/dotbot-brew.git
 [submodule "libs/dotbot"]
 	path = dotbot
 	url = https://github.com/anishathalye/dotbot

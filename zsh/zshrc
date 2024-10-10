@@ -1,6 +1,6 @@
 # Amazon Q pre block. Keep at the top of this file.
 [[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
-if [ -f ~/.zsh.init.extra ]; then source ~/.zsh.init.extra; fi
+safe_load ~/.zsh.init.extra
 typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
@@ -83,12 +83,13 @@ ZSH_CUSTOM=~/.dotfiles/zsh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git python aws  zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ohmyzsh-full-autoupdate)
+# plugins=(git python aws  zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete ohmyzsh-fullq-autoupdate)
 plugins=(
     1password
     aws
     fast-syntax-highlighting
     git
+    git-commit
     iterm2
     ohmyzsh-full-autoupdate
     dotfiles-autoupdate # put this after for better experience

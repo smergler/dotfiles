@@ -55,14 +55,19 @@
               - shell:
                 - [ NONINTERACTIVE=1 /bin/bash -c  ~/.dotfiles/libs/homebrew-install/install.sh, Installing Homebrew]
                 - [ source ~/.zshrc ]
-            unmet:
-              - shell:
-                - [ brew update, Updating Homebrew ]
-                -
-                  command: brew outdated
-                  description: We will now update the following programs
-                  stdout: true
-                - [ brew upgrade, Updating....]
+        - shell:
+          - [ brew update, Updating Homebrew ]
+          -
+            command: brew outdated
+            description: We will now update the following programs
+            stdout: true
+          - [ brew upgrade, Updating....]
+          # Cask/Greedy options needed to upgrade self-updating apps that may not upgrade themselves
+          -
+            command: brew outdated --cask --greedy
+            description: We will now update the following cask programs
+            stdout: true
+          - [ brew upgrade --cask --greedy, Updating....]
 
 # If we can install homebrew install a bunch of standard apps we use
 - if:
@@ -117,9 +122,13 @@
                     - cask:
                         - visual-studio-code
                         - slack
+            - defaults:
+                link:
+                    relink: true
+                    force: true
             - link:
-                "~/Library/Application Support/Code/User/keybindings.json": config/vs_code/keybindings.json
-                "~/Library/Application Support/Code/User/settings.json": config/vs_code/settings.json
+                ~/Library/Application Support/Code/User/keybindings.json: config/vs_code/keybindings.json
+                ~/Library/Application Support/Code/User/settings.json: config/vs_code/settings.json
     unmet:
       - defaults:
           apt:

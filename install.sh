@@ -76,7 +76,7 @@ if [ -e $basedir ]; then
     cd $basedir
     if [ -e .git ]; then
         note "Updating dotfiles from git..."
-        git pull --rebase origin master
+        git pull --rebase --autostash origin master
         note "Installing Submodules"
         git submodule update --init --recursive
     else
@@ -112,22 +112,4 @@ $basedir/dotbot_install \
     --plugin-dir $basedir/libs/dotbot-yum \
     -c dotbot_config.yaml
 
-#note "Running linking for Java"
-#sudo ln -sfn $HOMEBREW_PREFIX/opt/openjdk/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk.jdk
-
-#ZSH_SHELL=$(which zsh)
-#if [ $SHELL != $ZSH_SHELL ]; then
-#    note "Will try switching to ZSH, may require password"
-#    sudo sh -c "echo $(which zsh) >> /etc/shells"
-#    chsh -s $(which zsh)
-#    note "Please try quitting iTerm and restarting it, or logging in and logging out"
-#fi
-
-# note "Running Scripts"
-# for script in scripts/*; do
-#     if [ -f $script ]; then
-#         echo "Running $script";
-#         sh $script
-#     fi
-# done
 note "Done."

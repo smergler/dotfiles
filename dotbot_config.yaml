@@ -90,6 +90,7 @@
         - tre
         - vim
         - wget
+        - yq
         - zsh
         - zsh-completions
       # If this is a mac, install some creature comfort apps I use

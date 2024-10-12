@@ -11,4 +11,5 @@ safe_load() {
   fi
 }
 
+export XDG_CONFIG_HOME="$HOME/.config"
 safe_load ~/.zshenv.local

@@ -3,5 +3,15 @@
 # window. Subshells that start within the terminal window inherit
 # settings but don't load ~/.zprofile again.
 
+brew_binaries=(
+    "/opt/homebrew/bin/brew"
+    "/usr/local/bin/brew"
+)
+for BREW_BIN in $brew_binaries; do
+    if [[ -f $BREW_BIN ]]; then
+        eval "$($BREW_BIN shellenv)"
+    fi
+done
+
 safe_load ~/.zprofile.local
-eval "$(/opt/homebrew/bin/brew shellenv)"
+

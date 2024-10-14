@@ -20,6 +20,8 @@
     ~/.zprofile: zsh/profile
     ~/.zshenv: zsh/env
     ~/.zshrc: zsh/zshrc
+    # for neovim
+    ~/.config/nvim: nvim
 
 # install homebrew
 # homebrew doesn't support arm chips currently
@@ -102,8 +104,6 @@
         - fd
         - lazygit
         - ripgrep
-      - link:
-        - ~/.config/nvim: nvim
       # If this is a mac, install some creature comfort apps I use
       - if:
         - cond: '[ `uname` = Darwin ]'

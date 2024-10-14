@@ -91,3 +91,5 @@ alias k='kubectl'
 alias sshno='ssh -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
 alias scpno='scp -o "UserKnownHostsFile=/dev/null" -o "StrictHostKeyChecking=no"'
 alias rsyncno='rsync -e"sshno"'
+
+alias nv='nvim'

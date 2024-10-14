@@ -93,6 +93,17 @@
         - yq
         - zsh
         - zsh-completions
+      # This sections is for nvim changes ... testing out with lazyvim
+      - brew:
+        - neovim
+        - luarocks
+       #  - lua@5.1
+        - rg
+        - fd
+        - lazygit
+        - ripgrep
+      - link:
+        - ~/.config/nvim: nvim
       # If this is a mac, install some creature comfort apps I use
       - if:
         - cond: '[ `uname` = Darwin ]'

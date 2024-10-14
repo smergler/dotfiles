@@ -4,4 +4,4 @@
 # settings but don't load ~/.zprofile again.
 
 safe_load ~/.zprofile.local
-eval "$($(which brew) shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"

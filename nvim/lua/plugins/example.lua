@@ -39,6 +39,7 @@ return {
       table.insert(opts.sources, { name = "emoji" })
     end,
   },
+
   -- change some telescope options and a keymap to browse plugin files
   {
     "nvim-telescope/telescope.nvim",
@@ -109,6 +110,7 @@ return {
       },
     },
   },
+
   -- for typescript, LazyVim also includes extra specs to properly setup lspconfig,
   -- treesitter, mason and typescript.nvim. So instead of the above, you can use:
   { import = "lazyvim.plugins.extras.lang.typescript" },
@@ -149,6 +151,7 @@ return {
       })
     end,
   },
+
   -- the opts function can also be used to change the default opts:
   {
     "nvim-lualine/lualine.nvim",

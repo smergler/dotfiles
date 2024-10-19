@@ -22,7 +22,10 @@
     ~/.zshrc: zsh/zshrc
     # for neovim
     ~/.config/nvim: nvim
-
+- shell:
+    - [~/.tmux/plugins/tpm/bin/clean_plugins, "Cleaning up old TMUX plugins" ]
+    - [~/.tmux/plugins/tpm/bin/install_plugins, "Installing TMUX plugins" ]
+    - [~/.tmux/plugins/tpm/bin/update_plugins all, "Updating TMUX plugins" ]
 # install homebrew
 # homebrew doesn't support arm chips currently
 - if:

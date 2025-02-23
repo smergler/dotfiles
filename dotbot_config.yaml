@@ -12,6 +12,7 @@
     ~/.config/git: git
     ~/.editorconfig: config/editor/editorconfig
     ~/.git.scmbrc: scm_breeze/git.scmbrc
+    ~/.gitconfig: git/config
     ~/.p10k.zshrc: zsh/p10k.zsh
     ~/.scmbrc: scm_breeze/scmbrc
     ~/.tmux/plugins/tpm: tmux/plugins/tpm

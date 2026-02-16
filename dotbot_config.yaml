@@ -120,13 +120,8 @@
                 - 1password
                 - 1password-cli
                 - alfred
-                - amazon-q
                 - caffeine
                 - dbeaver-community
-                - notunes
-                - signal
-                - vlc
-                - zoom
             - if:
                 # Certain applications are installed in other ways on work machines
                 # Or is for personal machines
@@ -138,6 +133,10 @@
                     - cask:
                         - visual-studio-code
                         - slack
+                        - notunes
+                        - signal
+                        - vlc
+                        - zoom
             - defaults:
                 link:
                     relink: true

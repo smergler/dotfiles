@@ -8,13 +8,13 @@
         recursive: true
 - link:
     ~/bin: bin
-    ~/.config/tmux: tmux
+    ~/.tmux: tmux
+    ~/.tmux.conf: tmux/tmux.conf
     ~/.config/git: git
     ~/.editorconfig: config/editor/editorconfig
     ~/.git.scmbrc: scm_breeze/git.scmbrc
     ~/.p10k.zshrc: zsh/p10k.zsh
     ~/.scmbrc: scm_breeze/scmbrc
-    ~/.tmux/plugins/tpm: tmux/plugins/tpm
     ~/.vim: vim/vim
     ~/.vimrc: vim/vimrc
     ~/.zprofile: zsh/profile
@@ -144,6 +144,7 @@
             - link:
                 ~/Library/Application Support/Code/User/keybindings.json: config/vs_code/keybindings.json
                 ~/Library/Application Support/Code/User/settings.json: config/vs_code/settings.json
+                ~/.tmux/os.conf: tmux/osconfigs/osx.conf
     unmet:
       - defaults:
           apt:

@@ -1,2 +1,26 @@
 tmux/plugins/tmux*
 *.local
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Vim / Neovim swap, backup, undo
+*.swp
+*.swo
+*~
+*.bak
+.netrwhist
+Session.vim
+
+# Editors / IDEs
+.idea/
+.vscode/
+
+# Logs / temp
+*.log
+*.tmp

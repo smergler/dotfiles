@@ -1,3 +1,17 @@
 #!/bin/bash
-brew update;
-brew outdated | xargs brew upgrade;
+before=$(df -k /System/Volumes/Data | awk 'NR==2{print $4}')
+
+brew update
+brew outdated | xargs brew upgrade
+
+# cleanup: caches that regenerate on their own
+brew cleanup --prune=all -s
+command -v uv >/dev/null && uv cache prune
+command -v npm >/dev/null && npm cache clean --force
+command -v pip3 >/dev/null && pip3 cache purge
+rm -rf ~/.gradle/caches ~/.cache/puppeteer
+docker info >/dev/null 2>&1 && docker image prune -f && docker builder prune -f
+tmutil thinlocalsnapshots / 999999999999 4 >/dev/null
+
+after=$(df -k /System/Volumes/Data | awk 'NR==2{print $4}')
+echo "freed $(((after - before) / 1024 / 1024))G, $(df -h /System/Volumes/Data | awk 'NR==2{print $4}') free"

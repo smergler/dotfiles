@@ -29,6 +29,10 @@
   "javascript.updateImportsOnFileMove.enabled": "always",
   "phpcs.enable": false,
   "redhat.telemetry.enabled": true,
+  "search.useIgnoreFiles": false, // Prevents VS Code from hiding files listed in .gitignore
+  "search.exclude": {
+    "**/node_modules": true       // Keep this true to protect performance
+  },
   "telemetry.telemetryLevel": "off",
   "terminal.explorerKind": "external",
   "terminal.external.osxExec": "iTerm.app",
@@ -57,7 +61,9 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "workbench.editorAssociations": {
-    "*.ipynb": "jupyter.notebook.ipynb"
+    "*.ipynb": "jupyter.notebook.ipynb",
+    "*.md": "vscode.markdown.preview.editor"
   },
   "git.openRepositoryInParentFolders": "never",
+  "makefile.configureOnOpen": true,
 }
